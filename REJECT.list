@@ -1,0 +1,165 @@
+# Reject  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
+
+DOMAIN,cl2-cn.apple.com
+DOMAIN-SUFFIX,cl4-cn.apple.com
+DOMAIN,c5.apple.com
+DOMAIN,ad.cyapi.cn
+DOMAIN,033249.ingest.sentry.io
+DOMAIN-SUFFIX,ingest.sentry.io
+DOMAIN,mall.bilibili.com
+DOMAIN,passport.bilibili.com
+
+# 滴滴出行
+DOMAIN-SUFFIX,gwp.xiaojukeji.com
+
+# 屏蔽网站监管提示
+DOMAIN-SUFFIX,u3.ucweb.com
+DOMAIN-SUFFIX,safebrowsing.urlsec.qq.com
+DOMAIN-SUFFIX,safebrowsing.googleapis.com
+DOMAIN-SUFFIX,lookup.api.bsb.baidu.com
+
+DOMAIN,adcdn.tencentmusic.com
+DOMAIN,ad.tencentmusic.com
+DOMAIN,adplay.tencentmusic.com
+DOMAIN,adexpo.tencentmusic.com
+DOMAIN,ssp.tencentmusic.com
+DOMAIN,adstats.tencentmusic.com
+DOMAIN,business.msstatic.com
+DOMAIN,gg.caixin.com
+DOMAIN,p37-acsegateway.icloud.com.cn
+
+DOMAIN-SUFFIX,pgdt.ugdtimg.com
+
+IP-CIDR,111.47.213.195/32,no-resolve
+
+IP-CIDR,101.124.19.122/16,no-resolve
+
+# > 网易云音乐
+DOMAIN,img1.360buyimg.com
+DOMAIN,g.cn.miaozhen.com
+
+#因为有时候iad的域名会走tcp80端口所以用rule
+DOMAIN,iadmatapk.nosdn.127.net
+#网易云dns会导致ip乱跳到tcp
+DOMAIN,httpdns.n.netease.com
+#因为interface*.music.163.com.163jiasu.com, mitm不了,故拦截掉
+DOMAIN-SUFFIX,163jiasu.com
+
+# > 拦截100
+DOMAIN,ntb.lanjie100.com
+
+# > 番茄小说 去广告
+DOMAIN,dig.zjurl.cn,extended-matching
+DOMAIN,dig.bdurl.net
+AND,((DOMAIN-SUFFIX,zijieapi.com), (DOMAIN-KEYWORD,ad))
+DOMAIN,is.snssdk.com
+
+# > umeng相关
+# > umeng.co
+DOMAIN-SUFFIX,umeng.co
+
+# > umeng.com
+DOMAIN-SUFFIX,log.umeng.com
+DOMAIN-SUFFIX,logs.umeng.com
+DOMAIN-SUFFIX,ulogs.umeng.com
+DOMAIN-SUFFIX,utoken.umeng.com
+# > umengcloud.com
+DOMAIN-SUFFIX,log.umengcloud.com
+DOMAIN-SUFFIX,ulog.umengcloud.com
+# > umengcloudlog.com
+DOMAIN-SUFFIX,logs.umengcloudlog.com
+DOMAIN-SUFFIX,alogs.umengcloudlog.com
+DOMAIN-SUFFIX,alog.umengcloudlog.com
+
+# > QQ 遗留代码
+OR,((DOMAIN,wspeed.qq.com),(IP-CIDR,183.61.49.155/32,no-resolve),(IP-CIDR,59.36.121.252/32,no-resolve))
+
+# > Safari 防跳转
+# DOMAIN,app-site-association.cdn-apple.com
+
+# > 人人视频 去广告
+AND,((USER-AGENT,PUClient*), (NOT,((DOMAIN-SUFFIX,rr.tv))))
+
+# > 掌上公交
+DOMAIN,quanguo.mygolbs.com
+
+# 工商银行 开屏广告
+DOMAIN-SUFFIX,pageviewp.icbc.com.cn
+
+# > 去除腾讯视频广告
+AND,((PROTOCOL,HTTPS), (DOMAIN,iacc.qq.com))
+
+# > 喜马拉雅跟踪和广告
+DOMAIN,gslbali.ximalaya.com
+DOMAIN,gslbtx.ximalaya.com
+
+# > 微博
+DOMAIN-SUFFIX,gw.im.weibo.cn
+DOMAIN-SUFFIX,gw1.i.weibo.cn
+
+# > 避免哔哩哔哩免流失效
+AND,((USER-AGENT,bili*), (NOT,((DOMAIN-SUFFIX,bilibili.com))),(NOT,((DOMAIN-SUFFIX,hdslb.com))), (NOT,((DOMAIN,wap.cmpassport.com))), (NOT,((DOMAIN-SUFFIX,wo.cn))), (NOT,((DOMAIN-SUFFIX,biligame.com))),(NOT,((DOMAIN-SUFFIX,bilivideo.com))), (NOT,((DOMAIN-SUFFIX,biliapi.com))))
+# > 哔哩哔哩
+DOMAIN-SUFFIX,grpc.biliapi.net
+
+//引用自 https://github.com/ExaAlice/Alice/blob/main/Rule/Adblock.list
+# > 未知广告 来自#49反馈
+DOMAIN-SUFFIX,stats.chinaz.com
+
+# > 亲邻开门
+DOMAIN,qadx.qinlinad.com
+
+# > 以下为某些不可描述网站加载的乱七八糟广告
+DOMAIN-SUFFIX,maizhenai.cn
+DOMAIN-SUFFIX,paomifen.cn
+DOMAIN-SUFFIX,songlaoban.cn
+DOMAIN-SUFFIX,09mk.cn
+DOMAIN-SUFFIX,hepengshan.cn
+DOMAIN-SUFFIX,epsilon.com
+DOMAIN-SUFFIX,storygize.net
+DOMAIN-SUFFIX,connexity.net
+DOMAIN-SUFFIX,liadm.com
+DOMAIN-SUFFIX,agkn.com
+DOMAIN-SUFFIX,exelator.com
+DOMAIN-SUFFIX,dualstack.adsame-1421766300.ap-southeast-1.elb.amazonaws.com
+DOMAIN-SUFFIX,amaoshe.cn
+DOMAIN-SUFFIX,yeshoutuan.cn
+DOMAIN-SUFFIX,muxq8.cn
+DOMAIN-SUFFIX,huanshawang.cn
+DOMAIN-SUFFIX,v85968.cn
+
+# > 以下为广告联盟
+DOMAIN-SUFFIX,taboola.com
+DOMAIN-SUFFIX,trc.taboola.com
+# > 付呗收款码支付后跳转到的广告地址（支付宝内）
+DOMAIN-SUFFIX,tuisnake.com
+DOMAIN-SUFFIX,duiba.com.cn
+DOMAIN-SUFFIX,dui88.com
+
+# > 169
+DOMAIN-SUFFIX,kikibt8.com
+DOMAIN-SUFFIX,kikibt8.xyz
+
+# > 中国反诈官网
+IP-CIDR,39.102.194.95/32,no-resolve
+IP-CIDR,182.43.124.6/32,no-resolve
+IP-CIDR,101.35.177.86/32,no-resolve
+DOMAIN,96110.pages.dev
+DOMAIN-SUFFIX,gdt.qq.com
+DOMAIN-SUFFIX,ssl.qhimg.com
+DOMAIN-SUFFIX,gjfzpt.cn
+IP-CIDR,219.143.187.136/32,no-resolve
+
+# > 谷歌
+URL-REGEX,^https?:\/\/.+\.googleapis.com/.+ad_break
+URL-REGEX,^https?:\/\/.+?\.googlevideo\.com\/ptracking\?pltype=adhost
+URL-REGEX,^https?:\/\/.+\.googleapis.com/.+log_event
+URL-REGEX,^https?:\/\/.+\.googleapis.com/adsmeasurement
+URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/.+oad=
+URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/ptracking
+URL-REGEX,^https?:\/\/pagead2\.googlesyndication\.com\/pagead\/
+URL-REGEX,^https?:\/\/[\w-]+\.googlevideo\.com\/.+&(oad|ctier)
+URL-REGEX,^https?:\/\/.+\.googlevideo\.com\/videogoodput
+
+# > 灵锡
+URL-REGEX,^https?:\/\/api\.internetofcity\.cn\/api\/resource\/anon\/popups\/(getSplashList|getList)

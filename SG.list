@@ -1,0 +1,4 @@
+# IP Limit-SG  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
+
+DOMAIN-SUFFIX,amazon.sg
+DOMAIN-SUFFIX,hsbc.com.sg

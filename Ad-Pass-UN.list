@@ -1,0 +1,54 @@
+# Ad-Pass  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
+
+DOMAIN,fonts.googleapis.com
+DOMAIN,fonts.gstatic.com
+
+# > Google
+DOMAIN-SUFFIX,blog.google // Google Blog
+DOMAIN-SUFFIX,googletraveladservices.com // Google Flights
+DOMAIN,clientservices.googleapis.com
+DOMAIN,dl.google.com
+DOMAIN,dl.l.google.com
+DOMAIN,update.googleapis.com
+DOMAIN,translate.googleapis.com
+DOMAIN-SUFFIX,s.youtube.com
+DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,googleadservices.com
+
+# > Firebase Cloud Messaging
+DOMAIN,mtalk.google.com
+DOMAIN,alt1-mtalk.google.com
+DOMAIN,alt2-mtalk.google.com
+DOMAIN,alt3-mtalk.google.com
+DOMAIN,alt4-mtalk.google.com
+DOMAIN,alt5-mtalk.google.com
+DOMAIN,alt6-mtalk.google.com
+DOMAIN,alt7-mtalk.google.com
+DOMAIN,alt8-mtalk.google.com
+
+# > Paramount+
+# DOMAIN,pubads.g.doubleclick.net
+
+# > Strava
+DOMAIN,analytics.strava.com
+
+# > subhd字幕
+DOMAIN-SUFFIX,subhd.tv
+DOMAIN,img.subhd.la
+
+# > 衫果
+DOMAIN,www.sonkwo.hk
+DOMAIN,static.sonkwo.hk
+DOMAIN-SUFFIX,sonkwo.hk
+
+# > clubhouse
+IP-CIDR,164.52.102.0/24,no-resolve
+
+# > 索尼headphones
+DOMAIN-SUFFIX,sony.com
+DOMAIN-SUFFIX,janraincapture.com
+DOMAIN-SUFFIX,ndmdhs.com
+
+# > 育碧
+DOMAIN-SUFFIX,ubi.com
+DOMAIN,ubistatic2-a.akamaihd.net
