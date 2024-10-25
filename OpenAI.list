@@ -1,3 +1,5 @@
-# 特定OpenAI网址
-DOMAIN-SUFFIX,api.aiproxy.io
-DOMAIN-SUFFIX,api.note,slax.app
+# 特定OpenAI网址  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
+
+# SlaxNote
+DOMAIN,api.note.slax.app
+DOMAIN-SUFFIX,slax.app
