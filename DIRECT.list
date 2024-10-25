@@ -9,7 +9,9 @@ DOMAIN-SUFFIX,mcc460.pub.3gppnetwork.org
 DOMAIN,epdg.epc.mnc11.mcc460.pub.3gppnetwork.org
 DOMAIN,epdg.epc.mnc03.mcc460.pub.3gppnetwork.org
 
+# ChatGPT 中转代理
 DOMAIN-SUFFIX,api.aiproxy.io
+
 DOMAIN-SUFFIX,115.com
 DOMAIN-SUFFIX,pan.baidu.com
 DOMAIN-SUFFIX,api.map.baidu.com
