@@ -7,3 +7,8 @@ DOMAIN-SUFFIX,api.aiproxy.io
 # SlaxNote
 DOMAIN,api.note.slax.app
 DOMAIN-SUFFIX,slax.app
+
+# Apple ChatGTP
+DOMAIN-SUFFIX,apple-relay.apple.com
+DOMAIN-SUFFIX,apple-relay.cloudflare.com
+DOMAIN-KEYWORD,apple-relay
