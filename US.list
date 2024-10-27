@@ -5,9 +5,6 @@ DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,omtrdc.net
 DOMAIN-SUFFIX,trusteer.com
 
-# Apple ChatGTP
-DOMAIN-SUFFIX,apple-relay.apple.com
-
 # T-Mobile 通过 iCloud 走 Wi-Fi Calling，同时关闭“设置-隐私与安全性-定位服务-系统服务-Wi-Fi 通话”定位权限
 IP-CIDR,208.54.0.0/16,no-resolve
 DOMAIN,ns.sipgeo.t-mobile.com
