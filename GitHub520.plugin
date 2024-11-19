@@ -1,3 +1,5 @@
+#!name=GitHub520
+#!icon=https://github.com/shindgewongxj/WHATSINStash/blob/main/icon/glados.png
 alive.github.com = 140.82.112.25
 live.github.com = 140.82.112.25
 github.githubassets.com = 185.199.108.154
@@ -36,4 +38,3 @@ pipelines.actions.githubusercontent.com = 13.107.42.16
 media.githubusercontent.com = 185.199.110.133
 cloud.githubusercontent.com = 185.199.109.133
 objects.githubusercontent.com = 185.199.111.133
- = 
