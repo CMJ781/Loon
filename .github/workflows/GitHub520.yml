@@ -18,9 +18,11 @@ jobs:
 
     - name: Process the file
       run: |
-        # 插入文件头两行
+        # 插入文件头四行
         echo "#!name=GitHub520" > GitHub520.plugin
         echo "#!icon=https://github.com/shindgewongxj/WHATSINStash/blob/main/icon/glados.png" >> GitHub520.plugin
+        echo " " >> GitHub520.plugin
+        echo "[Host]" >> GitHub520.plugin
         # 处理文件，根据要求修改内容
         awk '!/^#/ && NF { gsub(/ +/, " "); print $2 " = " $1 }' hosts.txt >> GitHub520.plugin
 
