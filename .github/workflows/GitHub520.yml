@@ -22,5 +22,5 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add WAS.TXT
-        git commit -m "Update WAS.TXT from hosts.gitcdn.top" || echo "No changes to commit"
+        git commit -m "Update GitHub520.txt from hosts.gitcdn.top" || echo "No changes to commit"
         git push
