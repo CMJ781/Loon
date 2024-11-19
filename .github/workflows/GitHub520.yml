@@ -1,28 +1,30 @@
-name: Update /GitHub520.plugin
+name: Update GitHub520.plugin
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 每天零点执行一次（UTC时间）
-  workflow_dispatch: # 手动触发选项
+    - cron: '0 * * * *' # 每小时执行一次
+  workflow_dispatch: # 手动触发
 
 jobs:
   update-file:
     runs-on: ubuntu-latest
-    permissions:
-     contents: write
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-    - name: Fetch hosts.txt
-      run: |
-        curl --retry 5 --retry-delay 5 -o GitHub520.plugin https://hosts.gitcdn.top/hosts.txt
+    - name: Download hosts file
+      run: wget -q -O hosts.txt https://hosts.gitcdn.top/hosts.txt
 
-    - name: Commit Changes
+    - name: Process the file
       run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        # 处理文件，根据要求修改内容
+        awk '!/^#/ { gsub(/ +/, " "); print $2 " = " $1 }' hosts.txt > GitHub520.plugin
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
         git add GitHub520.plugin
-        git commit -m "Update GitHub520.plugin from hosts.gitcdn.top" || echo "No changes to commit"
+        git commit -m "Update GitHub520.plugin"
         git push
