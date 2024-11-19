@@ -1,4 +1,4 @@
-name: Update /GitHub520.plugin
+name: Update /GitHub520.txt
 
 on:
   schedule:
@@ -15,7 +15,7 @@ jobs:
 
     - name: Fetch hosts.txt
       run: |
-        curl -o /GitHub520.plugin https://hosts.gitcdn.top/hosts.txt
+        curl -o /GitHub520.txt https://hosts.gitcdn.top/hosts.txt
 
     - name: Commit Changes
       run: |
