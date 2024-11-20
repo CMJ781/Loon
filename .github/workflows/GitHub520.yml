@@ -25,7 +25,6 @@ jobs:
         echo "[Host]" >> GitHub520.plugin
         # 处理文件，根据要求修改内容
         awk '!/^#/ && NF { gsub(/ +/, " "); print $2 " = " $1 }' hosts >> GitHub520.plugin
-
     - name: Commit changes
       run: |
         git config --local user.email "action@github.com"
