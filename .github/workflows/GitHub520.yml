@@ -18,9 +18,9 @@ jobs:
 
     - name: Process the file
       run: |
-        echo '#!name=GitHub520' > GitHub520.plugin
-        echo '#!icon=https://raw.githubusercontent.com/shindgewongxj/WHATSINStash/main/iconset/landmark/colosseum.png' >> GitHub520.plugin
-        echo "#当前文件生成的北京时间 $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S %Z')" >> GitHub520.plugin  # 插入北京时间
+        echo '#!name  =GitHub520' > GitHub520.plugin
+        echo '#!icon = https://raw.githubusercontent.com/shindgewongxj/WHATSINStash/main/iconset/landmark/colosseum.png' >> GitHub520.plugin
+        echo "# 当前文件生成的北京时间 $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S %Z')" >> GitHub520.plugin  # 插入北京时间
         echo '' >> GitHub520.plugin  # 插入空白行
         echo '[Host]' >> GitHub520.plugin
         awk '!/^#/ && NF' hosts | \
