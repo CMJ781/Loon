@@ -59,7 +59,7 @@ jobs:
           });
 
           const successfulRuns = workflowRuns.workflow_runs.filter(run => run.conclusion === 'success');
-          const runsToDelete = successfulRuns.slice(5); // 保留最近5个成功运行记录
+          const runsToDelete = successfulRuns.slice(2); // 保留最近2个成功运行记录
 
           for (const run of runsToDelete) {
             await github.rest.actions.deleteWorkflowRun({
