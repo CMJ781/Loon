@@ -33,11 +33,3 @@ jobs:
         git add GitHub520.plugin
         git commit -m "Update GitHub520.plugin"
         git push
-
-    - name: Delete old successful workflow runs
-      uses: Mattraks/delete-workflow-runs@v2
-      with:
-        num_workflow_runs_to_keep: 5 # 保留最近 5 条成功的工作流运行记录
-        status: success # 仅删除成功的工作流运行
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
