@@ -27,7 +27,7 @@ jobs:
         awk '{$1=$1}1' | \
         awk '{print $2 " " $1}' >> GitHub520.plugin
         # 从第6行开始，将每行中的空格替换为" = "
-        tail -n +6 hosts.txt | sed 's/ / = /g' >> GitHub520.plugin
+        tail -n +6 GitHub520.plugin | sed 's/ / = /g' >> GitHub520.plugin
 
     - name: Commit changes
       run: |
