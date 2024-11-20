@@ -38,8 +38,8 @@ jobs:
         git push
         
     - name: Delete workflow runs
-     uses: Mattraks/delete-workflow-runs@v2
-     with:
+      uses: Mattraks/delete-workflow-runs@v2
+      with:
         token: ${{ github.token }}
         repository: ${{ github.repository }}
         retain_days: 5
