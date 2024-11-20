@@ -1,4 +1,4 @@
-name: Update GitHub520.plugin and Clean Workflow History
+name: 更新 GitHub520.plugin
 
 on:
   schedule:
