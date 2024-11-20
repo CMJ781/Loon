@@ -34,14 +34,8 @@ jobs:
         git commit -m "Update GitHub520.plugin"
         git push
 
-jobs:
-  update-file:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@main
-      continue-on-error: true
+    - name: 清理工作空间
+      uses: GitRML/delete-workflow-runs@main
       with:
         retain_days: 1
         keep_minimum_runs: 3
