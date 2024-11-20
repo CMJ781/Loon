@@ -46,15 +46,26 @@ jobs:
     - name: Clean up old workflow runs
       uses: actions/github-script@v6
       with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
+          const { data: workflows } = await github.rest.actions.listRepoWorkflows({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+          });
+
+          const workflow = workflows.workflows.find(w => w.name === 'Update GitHub522.plugin');
+          if (!workflow) {
+            throw new Error('Workflow not found');
+          }
+
           const { data: workflowRuns } = await github.rest.actions.listWorkflowRuns({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            workflow_id: context.workflow,
+            workflow_id: workflow.id,
             per_page: 100
           });
 
-          const successfulRuns = workflowRuns.filter(run => run.conclusion === 'success');
+          const successfulRuns = workflowRuns.workflow_runs.filter(run => run.conclusion === 'success');
           const runsToDelete = successfulRuns.slice(5); // 保留最近5个成功运行记录
 
           for (const run of runsToDelete) {
