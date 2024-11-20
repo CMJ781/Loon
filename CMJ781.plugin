@@ -1,6 +1,6 @@
 #!name = 零星去广告配置收集广告（Loon版）
-#!icon=https://github.com/shindgewongxj/WHATSINStash/blob/main/icon/applegamecenter.png
-#!desc =去除开屏广告及活动背景图，需清除缓存后生效
+#!icon = https://raw.githubusercontent.com/shindgewongxj/WHATSINStash/main/iconset/landmark/christtheredeemer.png
+#!desc = 去除开屏广告及活动背景图，需清除缓存后生效
 #!date = 2024-11-18 21:37
 
 [Rewrite]
