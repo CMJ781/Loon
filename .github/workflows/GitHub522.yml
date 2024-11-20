@@ -1,4 +1,4 @@
-name: Update GitHub522.plugin
+name: Update GitHub520.plugin and Clean Workflow History
 
 on:
   schedule:
@@ -13,61 +13,58 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Set up Git
-      run: |
-        git config --local user.name "GitHub Action"
-        git config --local user.email "action@github.com"
-
     - name: Download hosts file
-      run: wget -q -O hosts https://raw.githubusercontent.com/zwrt/hosts/refs/heads/main/hosts
+      run: wget -q -O hosts.txt https://hosts.gitcdn.top/hosts.txt
 
     - name: Process the file
       run: |
-        # 处理文件的脚本
-        awk '!/^#/ && NF' hosts |  # 删除以"#"开头的行和空白行
-        awk '{$1=$1}1' |  # 去除多余空格，仅保留一个空格
-        awk '{print $2 " " $1}' |  # 交换空格左右字符串
-        sed 's/ / = /' > processed.txt  # 使用" = "替换空格
+        echo '#!name=GitHub520' > GitHub520.plugin
+        echo '#!icon=https://github.com/shindgewongxj/WHATSINStash/blob/main/icon/glados.png' >> GitHub520.plugin
+        awk '!/^#/ && NF' hosts.txt | \
+        awk '{$1=$1}1' | \
+        awk '{print $2 " " $1}' | \
+        sed 's/ / = /' >> GitHub520.plugin
 
-        # 插入文件头
-        echo "#!name=GitHub520" > GitHub520.plugin
-        echo "#!icon=https://github.com/shindgewongxj/WHATSINStash/blob/main/icon/glados.png" >> GitHub520.plugin
-        cat processed.txt >> GitHub520.plugin
-
-    - name: Commit and push changes
+    - name: Commit changes
       run: |
+        git config --local user.name "GitHub Action"
+        git config --local user.email "action@github.com"
         git add GitHub520.plugin
         git commit -m "Update GitHub520.plugin"
         git push
 
-  cleanup-workflow-runs:
+  cleanup:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Clean up old workflow runs
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Delete old successful workflow runs
       uses: actions/github-script@v6
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
           const { data: workflows } = await github.rest.actions.listRepoWorkflows({
             owner: context.repo.owner,
-            repo: context.repo.repo,
+            repo: context.repo.repo
           });
-
-          const workflow = workflows.workflows.find(w => w.name === 'Update GitHub522.plugin');
+          
+          const workflow = workflows.workflows.find(wf => wf.name === 'Update GitHub520.plugin and Clean Workflow History');
           if (!workflow) {
             throw new Error('Workflow not found');
           }
-
+          
           const { data: workflowRuns } = await github.rest.actions.listWorkflowRuns({
             owner: context.repo.owner,
             repo: context.repo.repo,
             workflow_id: workflow.id,
             per_page: 100
           });
-
+          
           const successfulRuns = workflowRuns.workflow_runs.filter(run => run.conclusion === 'success');
           const runsToDelete = successfulRuns.slice(5); // 保留最近5个成功运行记录
-
+          
           for (const run of runsToDelete) {
             await github.rest.actions.deleteWorkflowRun({
               owner: context.repo.owner,
