@@ -34,7 +34,6 @@ jobs:
         git commit -m "Update GitHub520.plugin"
         git push
 
-    steps:
     - name: Delete old successful workflow runs
       uses: Mattraks/delete-workflow-runs@v2
       with:
