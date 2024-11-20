@@ -33,9 +33,3 @@ jobs:
         git add GitHub520.plugin
         git commit -m "Update GitHub520.plugin"
         git push
-
-    - name: 清理工作空间
-      uses: GitRML/delete-workflow-runs@main
-      with:
-        retain_days: 1
-        keep_minimum_runs: 3
