@@ -1,5 +1,5 @@
-#!name=GitHub520
-#!icon=https://github.com/shindgewongxj/WHATSINStash/blob/main/icon/appleitunesstore.png
+#!name = GitHub520
+#!icon = https://raw.githubusercontent.com/shindgewongxj/WHATSINStash/main/iconset/landmark/colosseum.png
  
 [Host]
 alive.github.com = 140.82.114.26
