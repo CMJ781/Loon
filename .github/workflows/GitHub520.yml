@@ -1,4 +1,4 @@
-name: Update GitHub520.plugin and Clean Workflow History
+name: Update GitHub520.plugin
 
 on:
   schedule:
@@ -46,7 +46,7 @@ jobs:
             repo: context.repo.repo
           });
 
-          const workflow = workflows.workflows.find(wf => wf.name === 'Update GitHub520.plugin and Clean Workflow History');
+          const workflow = workflows.workflows.find(wf => wf.name === 'Update GitHub520.plugin');
           if (!workflow) {
             throw new Error('Workflow not found');
           }
