@@ -18,4 +18,4 @@ jobs:
         num_workflow_runs_to_keep: 5 # 保留最近 5 条成功的工作流运行记录
         status: success # 仅针对成功的工作流运行记录进行操作
       env:
-        GITHUB_TOKEN: ${{ GITHUB_TOKEN }} # 确保您有一个 GitHub Token
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 确保您有一个 GitHub Token
