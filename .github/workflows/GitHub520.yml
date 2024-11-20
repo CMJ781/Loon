@@ -1,8 +1,8 @@
-name: 更新 GitHub520.plugin
+name: Update GitHub520.plugin and Clean Workflow History
 
 on:
   schedule:
-    - cron: '0 0/3 * * *'  # 每小时执行一次
+    - cron: '0 * * * *'  # 每小时执行一次
   workflow_dispatch:  # 手动触发
 
 jobs:
@@ -46,7 +46,7 @@ jobs:
             repo: context.repo.repo
           });
 
-          const workflow = workflows.workflows.find(wf => wf.name === '更新 GitHub520.plugin');
+          const workflow = workflows.workflows.find(wf => wf.name === 'Update GitHub520.plugin and Clean Workflow History');
           if (!workflow) {
             throw new Error('Workflow not found');
           }
@@ -59,7 +59,7 @@ jobs:
           });
 
           const successfulRuns = workflowRuns.workflow_runs.filter(run => run.conclusion === 'success');
-          const runsToDelete = successfulRuns.slice(2); // 保留最近2个成功运行记录
+          const runsToDelete = successfulRuns.slice(5); // 保留最近5个成功运行记录
 
           for (const run of runsToDelete) {
             await github.rest.actions.deleteWorkflowRun({
