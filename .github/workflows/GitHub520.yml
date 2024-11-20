@@ -8,6 +8,9 @@ on:
 jobs:
   update-file:
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
 
     steps:
     - name: Checkout repository
@@ -35,7 +38,9 @@ jobs:
         git push
         
     - name: Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@v2
-      with:
-        retain_days: 0.1
-        keep_minimum_runs: 0
+     uses: Mattraks/delete-workflow-runs@v2
+     with:
+        token: ${{ github.token }}
+        repository: ${{ github.repository }}
+        retain_days: 5
+        keep_minimum_runs: 5
