@@ -20,8 +20,8 @@ jobs:
       run: |
         echo '#!name=GitHub520' > GitHub520.plugin
         echo '#!icon=https://github.com/shindgewongxj/WHATSINStash/blob/main/icon/glados.png' >> GitHub520.plugin
-        echo '' >> GitHub520.plugin  # 插入空白行
-        echo "#当前文件生成的北京时间： $(date -u '+%Y-%m-%d %H:%M:%S %Z')" >> GitHub520.plugin  # 插入当前文件生成时间
+        echo "#当前文件生成的北京时间 $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S %Z')" >> GitHub520.plugin  # 插入北京时间
+         echo '' >> GitHub520.plugin  # 插入空白行
         echo '[Host]' >> GitHub520.plugin
         awk '!/^#/ && NF' hosts | \
         awk '{$1=$1}1' | \
