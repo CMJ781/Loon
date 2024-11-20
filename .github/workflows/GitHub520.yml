@@ -33,3 +33,10 @@ jobs:
         git add GitHub520.plugin
         git commit -m "Update GitHub520.plugin"
         git push
+
+    - name: Delete workflow runs
+      uses: Mattraks/delete-workflow-runs@main
+      continue-on-error: true
+      with:
+        retain_days: 1
+        keep_minimum_runs: 3
