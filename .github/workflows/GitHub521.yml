@@ -1,0 +1,35 @@
+name: Update GitHub520.plugin
+
+on:
+  schedule:
+    - cron: '0 1/3 * * *' # 从UTC时间1点开始，每三小时执行一次
+  workflow_dispatch: # 手动触发
+
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Download hosts file
+      run: wget -q -O hosts.txt https://hosts.gitcdn.top/hosts.txt
+
+    - name: Process the file
+      run: |
+        # 插入文件头四行
+        echo "#!name = GitHub520" > GitHub520.plugin
+        echo "#!icon = https://raw.githubusercontent.com/shindgewongxj/WHATSINStash/main/iconset/landmark/colosseum.png" >> GitHub520.plugin
+        echo " " >> GitHub520.plugin
+        echo "[Host]" >> GitHub520.plugin
+        # 处理文件，根据要求修改内容
+        awk '!/^#/ && NF { gsub(/ +/, " "); print $2 " = " $1 }' hosts.txt >> GitHub520.plugin
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add GitHub520.plugin
+        git commit -m "Update GitHub520.plugin"
+        git push
