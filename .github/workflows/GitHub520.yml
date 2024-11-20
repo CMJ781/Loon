@@ -8,9 +8,6 @@ on:
 jobs:
   update-file:
     runs-on: ubuntu-latest
-    permissions:
-      actions: write
-      contents: read
 
     steps:
     - name: Checkout repository
@@ -42,5 +39,5 @@ jobs:
       with:
         token: ${{ github.token }}
         repository: ${{ github.repository }}
-        retain_days: 5
+        retain_days: 2
         keep_minimum_runs: 5
