@@ -19,8 +19,8 @@ jobs:
     - name: Process the file
       run: |
         # 插入文件头四行
-        echo "#!name=GitHub520" > GitHub520.plugin
-        echo "#!icon=https://github.com/shindgewongxj/WHATSINStash/blob/main/icon/appleitunesstore.png" >> GitHub520.plugin
+        echo "#!name = GitHub520" > GitHub520.plugin
+        echo "#!icon = https://raw.githubusercontent.com/shindgewongxj/WHATSINStash/main/iconset/landmark/colosseum.png" >> GitHub520.plugin
         echo " " >> GitHub520.plugin
         echo "[Host]" >> GitHub520.plugin
         # 处理文件，根据要求修改内容
