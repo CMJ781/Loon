@@ -29,6 +29,10 @@ USER-AGENT,Infuse*
 
 IP-CIDR,45.116.152.0/22,no-resolve
 
+# Nexitally 佩奇官网
+DOMAIN,nxboom.com
+DOMAIN,nexitally.com
+
 # > Apple
 DOMAIN-SUFFIX,apps.apple.com
 DOMAIN,swcdn.apple.com
