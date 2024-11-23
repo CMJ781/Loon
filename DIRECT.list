@@ -36,8 +36,8 @@ DOMAIN-SUFFIX,airchina.com
 DOMAIN-SUFFIX,wifi.airchina.com
 DOMAIN-SUFFIX,todesk.com
 
-# 佩奇订阅
-DOMAIN-SUFFIX,drrmjd.lol
+# pikpak自我审查
+DOMAIN-KEYWORD,dl-a10b-
 
 DOMAIN-KEYWORD,h-world
 DOMAIN-KEYWORD,hantinghotels
