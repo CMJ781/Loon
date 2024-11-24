@@ -97,15 +97,9 @@ DOMAIN-SUFFIX,push.apple.com
 DOMAIN-SUFFIX,store.apple.com
 DOMAIN-SUFFIX,push-apple.com.akadns.net
 
-# Web Controller 网页控制器规则
-# > Surge
-DOMAIN,yasd.royli.dev
-# > Clash
-DOMAIN,clash.razord.top
-DOMAIN,yacd.haishan.me
-# > BoxJs
-DOMAIN,boxjs.com
-DOMAIN,boxjs.net
+# 抖音推送
+DOMAIN,frontier-aweme.snssdk.com
+AND,((DOMAIN-KEYWORD,frontier-aweme-),(AND,((OR,((DOMAIN-KEYWORD,-ipa.),(DOMAIN-KEYWORD,-ipainner.),(DOMAIN-KEYWORD,-origin.),(DOMAIN-KEYWORD,-ipainner-))),(OR,((DOMAIN-SUFFIX,snssdk.com),(DOMAIN-SUFFIX, amemv.com))))))
 
 # Router
 DOMAIN-SUFFIX,hiwifi.com
