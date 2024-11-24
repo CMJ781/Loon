@@ -12,6 +12,9 @@ DOMAIN-SUFFIX,hermes.com
 DOMAIN-SUFFIX,zaobao.com
 DOMAIN-SUFFIX,zaobao.com.sg
 
+# 八达通
+DOMAIN-SUFFIX,octopus-cards.com
+
 # steam 检测登陆地分配cdn
 DOMAIN-SUFFIX,steamserver.net
 DOMAIN,cm.steampowered.com
