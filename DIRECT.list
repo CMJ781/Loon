@@ -36,6 +36,9 @@ DOMAIN-SUFFIX,airchina.com
 DOMAIN-SUFFIX,wifi.airchina.com
 DOMAIN-SUFFIX,todesk.com
 
+# 小说网站
+DOMAIN-SUFFIX,xingxingxsw.com
+
 # pikpak自我审查
 DOMAIN-KEYWORD,dl-a10b-
 
