@@ -36,6 +36,11 @@ DOMAIN-SUFFIX,airchina.com
 DOMAIN-SUFFIX,wifi.airchina.com
 DOMAIN-SUFFIX,todesk.com
 
+# 微信热更新屏蔽CallKit
+DOMAIN,dl.wechat.com
+DOMAIN,dldir1.qq.com
+DOMAIN,dldir1v6.qq.com
+
 # 小说网站
 DOMAIN-SUFFIX,xingxingxsw.com
 
