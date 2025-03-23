@@ -106,7 +106,10 @@ DOMAIN-SUFFIX,store.apple.com
 DOMAIN-SUFFIX,push-apple.com.akadns.net
 
 # Nexitally 等机场节点订阅
-OR,((DOMAIN-SUFFIX,sub.nexconvert.com),(DOMAIN-SUFFIX,drrmjd.lol),(DOMAIN-SUFFIX,kelee.one),(IP-CIDR,59.75.130.241,no-resolve))
+DOMAIN-SUFFIX,sub.nexconvert.com
+DOMAIN-SUFFIX,drrmjd.lol
+DOMAIN-SUFFIX,kelee.one
+IP-CIDR,59.75.130.241,no-resolve
 
 # 抖音推送
 DOMAIN,frontier-aweme.snssdk.com
