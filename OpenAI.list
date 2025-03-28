@@ -16,3 +16,7 @@ DOMAIN-KEYWORD,apple-relay
 #Grok
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,grok.com
+
+#DeepSeek
+DOMAIN-SUFFIX,deepseek.com
+DOMAIN-SUFFIX,portal101.cn
