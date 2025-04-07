@@ -43,6 +43,18 @@ DOMAIN,dldir1v6.qq.com
 
 # 小说网站
 DOMAIN-SUFFIX,xingxingxsw.com
+DOMAIN-SUFFIX,m.tcknh.com
+
+# 节点订阅
+sub.nexconvert.com
+DOMAIN-SUFFIX,drrmjd.lol
+DOMAIN-SUFFIX,kelee.one
+
+# 测速网站
+DOMAIN-SUFFIX,ipcheck.ing
+DOMAIN-SUFFIX,ip233.cn
+DOMAIN-SUFFIX,speedtest.cn
+DOMAIN-SUFFIX,ipw.cn
 
 # pikpak自我审查
 DOMAIN-KEYWORD,dl-a10b-
