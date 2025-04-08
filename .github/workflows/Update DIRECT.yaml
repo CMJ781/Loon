@@ -11,9 +11,6 @@ jobs:
       uses: actions/checkout@v2
     - name: Process DIRECT.list
       run: |
-        # 创建Clash文件夹
-        mkdir -p Clash
-        
         # 处理文件
         awk '!/^#/{print "  - "$0}' Loon/DIRECT.list > Clash/DIRECT.yaml
         
