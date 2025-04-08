@@ -4,6 +4,8 @@ DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
 DOMAIN,speedtest.jsinfo.net
 DOMAIN-SUFFIX,cupid.iqiyi.com
 
+DOMAIN-SUFFIX,todesk.com,DIRECT
+
 # 中国电信WLAN通话
 DOMAIN-SUFFIX,mcc460.pub.3gppnetwork.org
 DOMAIN,epdg.epc.mnc11.mcc460.pub.3gppnetwork.org
