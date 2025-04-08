@@ -29,3 +29,40 @@ jobs:
         git add Clash/DIRECT.yaml
         git commit -m "Update Clash/DIRECT.yaml"
         git push
+
+  cleanup:
+    runs-on: ubuntu-22.04  # 指定 Ubuntu 版本
+
+    steps:
+    - name: Delete old successful workflow runs
+      uses: actions/github-script@v7  # 更新到支持 Node.js 20 的版本
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const { data: workflows } = await github.rest.actions.listRepoWorkflows({
+            owner: context.repo.owner,
+            repo: context.repo.repo
+          });
+
+          const workflow = workflows.workflows.find(wf => wf.name === 'Update GitHub520.plugin');
+          if (!workflow) {
+            throw new Error('Workflow not found');
+          }
+
+          const { data: workflowRuns } = await github.rest.actions.listWorkflowRuns({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            workflow_id: workflow.id,
+            per_page: 100
+          });
+
+          const successfulRuns = workflowRuns.workflow_runs.filter(run => run.conclusion === 'success');
+          const runsToDelete = successfulRuns.slice(1); // 保留最近1个成功运行记录
+
+          for (const run of runsToDelete) {
+            await github.rest.actions.deleteWorkflowRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: run.id
+            });
+          }
