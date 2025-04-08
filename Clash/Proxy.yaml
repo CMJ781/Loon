@@ -1,0 +1,45 @@
+payload:
+  - DOMAIN,api-h2.tiktokv.com
+  - DOMAIN,api2-16-h2.musical.ly
+  - DOMAIN-SUFFIX,accuweather.com
+  - DOMAIN-SUFFIX,e.t9k.space
+  - DOMAIN-SUFFIX,ecs.console.aliyun.com
+  - DOMAIN-SUFFIX,freedl.org
+  - DOMAIN-SUFFIX,ipip.net
+  - DOMAIN-SUFFIX,kidsa-z.com
+  - DOMAIN-SUFFIX,masuit.com
+  - DOMAIN-SUFFIX,quickconnect.to
+  - DOMAIN-SUFFIX,starfall.com
+  - DOMAIN-SUFFIX,update.sony.net
+  - DOMAIN-SUFFIX,weatherlive.info
+  - DOMAIN-SUFFIX,workflow.is
+  - DOMAIN-SUFFIX,catbox.moe
+  - DOMAIN-SUFFIX,jsdelivr.net
+  - DOMAIN-SUFFIX,52sf.ga
+  - DOMAIN-SUFFIX,tvfix.org
+  - DOMAIN-SUFFIX,vercel.app
+  - DOMAIN-SUFFIX,notion.site
+  - DOMAIN-KEYWORD,mp43
+  - USER-AGENT,bose*
+  - USER-AGENT,MKPlayer*
+  - USER-AGENT,Infuse*
+  - IP-CIDR,45.116.152.0/22,no-resolve
+  - DOMAIN,nxboom.com
+  - DOMAIN,nexitally.com
+  - DOMAIN-SUFFIX,apps.apple.com
+  - DOMAIN,swcdn.apple.com
+  - DOMAIN,updates.cdn-apple.com
+  - DOMAIN,iosapps.itunes.apple.com
+  - DOMAIN,osxapps.itunes.apple.com
+  - DOMAIN,updates-http.cdn-apple.com
+  - DOMAIN,iosapps.itunes.g.aaplimg.com
+  - DOMAIN,hls.itunes.apple.com.mwcname.com
+  - DOMAIN,hls.itunes.apple.com.mwcname.com.cd23f.com
+  - DOMAIN,k128-iosapps-all.gslb.ksyuncdn.com
+  - DOMAIN,iosapps-cn-lb.dl-apple.com.akadns.net
+  - DOMAIN,iosapps.itunes.apple.com.download.ks-cdn.com
+  - DOMAIN,iosapps.itunes.apple.com.m.alikunlun.net
+  - PROCESS-NAME,Backup and Sync
+  - PROCESS-NAME,Day One
+  - PROCESS-NAME,Resilio Sync
+  - PROCESS-NAME,Slack
