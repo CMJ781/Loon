@@ -1,8 +1,8 @@
-name: Update Speedtest.list.yaml
+name: Update Speedtest.yaml
 on:
   push:
     paths:
-      - 'Speedtest.list.list'
+      - 'Speedtest.list'
   workflow_dispatch:
 jobs:
   process-file:
@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - name: Process Speedtest.list.list
+    - name: Process Speedtest.list
       run: |
         # 确保在仓库的根目录下
         cd $GITHUB_WORKSPACE
@@ -18,14 +18,14 @@ jobs:
         mkdir -p Clash
         
         # 处理文件：删除#开头的行和空白行，并在每行开头添加"  - "
-        awk '!/^#/ && NF {print "  - "$0}' Speedtest.list.list > Clash/Speedtest.list.yaml
+        awk '!/^#/ && NF {print "  - "$0}' Speedtest.list > Clash/Speedtest.yaml
         
         # 在文件开头插入"payload:"
-        sed -i '1ipayload:' Clash/Speedtest.list.yaml
+        sed -i '1ipayload:' Clash/Speedtest.yaml
     - name: Commit changes
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add Clash/Speedtest.list.yaml
-        git commit -m "Update Clash/Speedtest.list.yaml from Speedtest.list.list"
+        git add Clash/Speedtest.yaml
+        git commit -m "Update Clash/Speedtest.yaml from Speedtest.list"
         git push
