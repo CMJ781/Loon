@@ -1,9 +1,9 @@
 name: Update DIRECT.yaml
 on:
   push:
-    workflow_dispatch:  # 手动触发
     paths:
       - Loon/DIRECT.list
+  workflow_dispatch:  # 手动触发 
 jobs:
   process-file:
     runs-on: ubuntu-latest
