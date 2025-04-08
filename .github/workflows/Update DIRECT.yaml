@@ -14,9 +14,7 @@ jobs:
       run: |
         # 确保在仓库的根目录下
         cd $GITHUB_WORKSPACE
-        # 创建Loon/Clash文件夹
-        mkdir -p Loon/Clash
-        
+
         # 处理文件
         awk '!/^#/{print "  - "$0}' DIRECT.list > Clash/DIRECT.yaml
         
