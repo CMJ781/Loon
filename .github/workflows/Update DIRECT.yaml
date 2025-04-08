@@ -13,7 +13,7 @@ jobs:
     - name: Process DIRECT.list
       run: |
         # 处理文件
-        awk '!/^#/{print "  - "$0}' Loon/DIRECT.list > Clash/DIRECT.yaml
+        awk '!/^#/{print "  - "$0}' https://raw.githubusercontent.com/CMJ781/Loon/refs/heads/main/DIRECT.list > Clash/DIRECT.yaml
         
         # 在文件开头插入"payload:"
         sed -i '1ipayload:' Clash/DIRECT.yaml
