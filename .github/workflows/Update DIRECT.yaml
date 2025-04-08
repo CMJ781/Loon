@@ -2,7 +2,7 @@ name: Update DIRECT.yaml
 on:
   push:
     paths:
-      - 'Loon/DIRECT.list'
+      - 'DIRECT.list'
   workflow_dispatch:
 jobs:
   process-file:
@@ -18,14 +18,14 @@ jobs:
         mkdir -p Loon/Clash
         
         # 处理文件
-        awk '!/^#/{print "  - "$0}' Loon/DIRECT.list > Loon/Clash/DIRECT.yaml
+        awk '!/^#/{print "  - "$0}' DIRECT.list > Clash/DIRECT.yaml
         
         # 在文件开头插入"payload:"
-        sed -i '1ipayload:' Loon/Clash/DIRECT.yaml
+        sed -i '1ipayload:' Clash/DIRECT.yaml
     - name: Commit changes
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git add Loon/Clash/DIRECT.yaml
-        git commit -m "Update Loon/Clash/DIRECT.yaml"
+        git commit -m "Update Clash/DIRECT.yaml"
         git push
