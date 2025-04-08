@@ -1,0 +1,16 @@
+payload:
+  - USER-AGENT,HWTVMobile*
+  - DOMAIN-SUFFIX,5itv.tv
+  - DOMAIN-SUFFIX,ocnttv.com
+  - USER-AGENT,ijkplayer
+  - DOMAIN-SUFFIX,hermes.com
+  - DOMAIN-SUFFIX,zaobao.com
+  - DOMAIN-SUFFIX,zaobao.com.sg
+  - DOMAIN-SUFFIX,octopus-cards.com
+  - DOMAIN-SUFFIX,steamserver.net
+  - DOMAIN,cm.steampowered.com
+  - DOMAIN,csl.prod.ondemandconnectivity.com
+  - DOMAIN,hhk.prod.ondemandconnectivity.com
+  - DOMAIN,epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
+  - DOMAIN,ss.epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
+  - DOMAIN,ss.epdg.epc.geo.mnc000.mcc454.pub.3gppnetwork.org
