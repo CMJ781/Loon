@@ -17,6 +17,9 @@ jobs:
         # 创建Clash文件夹（如果尚未存在）
         mkdir -p Clash
         
+        # 删除现有的SG.yaml文件（如果存在）
+        rm -f Clash/SG.yaml
+        
         # 处理文件：删除#开头的行和空白行，并在每行开头添加"  - "
         awk '!/^#/ && NF {print "  - "$0}' US.list > Clash/US.yaml
         
