@@ -3,19 +3,17 @@ on:
   push:
     paths:
       - 'Loon/DIRECT.list'
-  workflow_dispatch:  # 添加手动触发功能
+  workflow_dispatch:
 jobs:
   process-file:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - name: Download DIRECT.list
-      run: |
-        # 下载文件到本地
-        curl -o Loon/DIRECT.list https://raw.githubusercontent.com/CMJ781/Loon/refs/heads/main/DIRECT.list
     - name: Process DIRECT.list
       run: |
+        # 确保在仓库的根目录下
+        cd $GITHUB_WORKSPACE
         # 创建Clash文件夹
         mkdir -p Clash
         
@@ -27,7 +25,7 @@ jobs:
     - name: Commit changes
       run: |
         git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
         git add Clash/DIRECT.yaml
-        git commit -m "Update DIRECT.yaml based on changes in DIRECT.list"
+        git commit -m "Update Clash/DIRECT.yaml from Loon/DIRECT.list"
         git push
