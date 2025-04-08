@@ -4,7 +4,18 @@ DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
 DOMAIN,speedtest.jsinfo.net
 DOMAIN-SUFFIX,cupid.iqiyi.com
 
-DOMAIN-SUFFIX,todesk.com,DIRECT
+# 内容：远程桌面软件
+PROCESS-NAME,devcon.exe
+PROCESS-NAME,DriverInstaller.exe
+PROCESS-NAME,CrashReport.exe
+PROCESS-NAME,SunloginClient.exe
+PROCESS-NAME,ToDesk_Setup.exe
+PROCESS-NAME,ToDesk_Session.exe
+PROCESS-NAME,ToDesk_Service.exe
+PROCESS-NAME,ToDesk.exe
+PROCESS-NAME,mstsc.exe
+
+DOMAIN-SUFFIX,todesk.com
 
 # 中国电信WLAN通话
 DOMAIN-SUFFIX,mcc460.pub.3gppnetwork.org
@@ -171,7 +182,13 @@ PROCESS-NAME,webtorrenthelper
 PROCESS-NAME,webtorrenthelper.exe
 PROCESS-NAME,weiyun
 PROCESS-NAME,weiyun.exe
-
+URL-REGEX,(Subject|HELO|SMTP)
+URL-REGEX,(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com
+URL-REGEX,(.+.|^)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan).(cn|com)
+URL-REGEX,(.+.)?(torrent|announce.php?passkey=|tracker|BitTorrent|bt_key|ed2k|find_node|get_peers|info_hash|magnet:|peer_id=|xunlei)(..+)?
+URL-REGEX,(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)
+URL-REGEX,(.+\.|^)(360|so)\.(cn|com)
+URL-REGEX,assets\d+\.xboxlive\.(com|cn)
 
 # 以下引用自https://github.com/BlueGrave/Surge/blob/master/Module/WhiteList.sgmodule
 # General
