@@ -5,6 +5,14 @@ DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,omtrdc.net
 DOMAIN-SUFFIX,trusteer.com
 
+# velo bank
+USER-AGENT,velo*
+DOMAIN-KEYWORD,velobank
+DOMAIN-KEYWORD,eastwestbank
+DOMAIN-SUFFIX,omtrdc.net
+DOMAIN-SUFFIX,assureid.net
+DOMAIN-SUFFIX,velo.helpshift.com
+
 # cubox 美国数据服务器
 DOMAIN-SUFFIX,cubox.cc
 
