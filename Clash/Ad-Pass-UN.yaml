@@ -20,8 +20,6 @@ payload:
   - DOMAIN,alt6-mtalk.google.com
   - DOMAIN,alt7-mtalk.google.com
   - DOMAIN,alt8-mtalk.google.com
-  - DOMAIN-SUFFIX,ui.com
-  - DOMAIN-SUFFIX,ubnt.com
   - DOMAIN,analytics.strava.com
   - DOMAIN-SUFFIX,subhd.tv
   - DOMAIN,img.subhd.la
