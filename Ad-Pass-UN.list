@@ -26,10 +26,6 @@ DOMAIN,alt6-mtalk.google.com
 DOMAIN,alt7-mtalk.google.com
 DOMAIN,alt8-mtalk.google.com
 
-# UBNT路由器联网
-DOMAIN-SUFFIX,ui.com
-DOMAIN-SUFFIX,ubnt.com
-
 # > Paramount+
 # DOMAIN,pubads.g.doubleclick.net
 
