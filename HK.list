@@ -19,6 +19,9 @@ DOMAIN-SUFFIX,octopus-cards.com
 DOMAIN-SUFFIX,steamserver.net
 DOMAIN,cm.steampowered.com
 
+# qbittorrent官网
+DOMAIN-SUFFIX,qbittorrent.org
+
 # Club sim 通过 iCloud 走 Wi-Fi Calling，同时关闭“设置-隐私与安全性-定位服务-系统服务-Wi-Fi 通话”定位权限
 DOMAIN,csl.prod.ondemandconnectivity.com
 DOMAIN,hhk.prod.ondemandconnectivity.com
