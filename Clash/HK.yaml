@@ -9,6 +9,7 @@ payload:
   - DOMAIN-SUFFIX,octopus-cards.com
   - DOMAIN-SUFFIX,steamserver.net
   - DOMAIN,cm.steampowered.com
+  - DOMAIN-SUFFIX,qbittorrent.org
   - DOMAIN,csl.prod.ondemandconnectivity.com
   - DOMAIN,hhk.prod.ondemandconnectivity.com
   - DOMAIN,epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
