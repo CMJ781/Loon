@@ -24,8 +24,9 @@ payload:
   - USER-AGENT,MKPlayer*
   - USER-AGENT,Infuse*
   - IP-CIDR,45.116.152.0/22,no-resolve
-  - DOMAIN,nxboom.com
-  - DOMAIN,nexitally.com
+  - DOMAIN-SUFFIX,nxboom.com
+  - DOMAIN-SUFFIX,nexitally.com
+  - DOMAIN-SUFFIX,qbittorrent.org
   - DOMAIN-SUFFIX,apps.apple.com
   - DOMAIN,swcdn.apple.com
   - DOMAIN,updates.cdn-apple.com
