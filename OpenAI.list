@@ -13,10 +13,14 @@ DOMAIN-SUFFIX,apple-relay.apple.com
 DOMAIN-SUFFIX,apple-relay.cloudflare.com
 DOMAIN-KEYWORD,apple-relay
 
-#Grok
+# Grok
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,grok.com
 
-#DeepSeek
+# DeepSeek
 DOMAIN-SUFFIX,deepseek.com
 DOMAIN-SUFFIX,portal101.cn
+
+# 外版手机+国区 iCloud 可以使用 Apple intelligence
+DOMAIN-SUFFIX,apple-relay.cloudflare.com
+DOMAIN-SUFFIX,apple-relay.apple.com
