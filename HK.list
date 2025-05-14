@@ -15,6 +15,9 @@ DOMAIN-SUFFIX,zaobao.com.sg
 # 八达通
 DOMAIN-SUFFIX,octopus-cards.com
 
+# imazing 软件
+DOMAIN-SUFFIX,imazing.com
+
 # steam 检测登陆地分配cdn
 DOMAIN-SUFFIX,steamserver.net
 DOMAIN,cm.steampowered.com
