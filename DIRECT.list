@@ -15,7 +15,7 @@ PROCESS-NAME,ToDesk_Service.exe
 PROCESS-NAME,ToDesk.exe
 PROCESS-NAME,mstsc.exe
 
-
+DOMAIN-SUFFIX,ui.com
 DOMAIN-SUFFIX,todesk.com
 
 # 中国电信WLAN通话
