@@ -4,7 +4,8 @@ URL-REGEX,^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/brand\/set
 URL-REGEX,^https?:\/\/www\.didapinche\.com\/app\/adstat.*&ad_type=(ride_paid|benefits)
 URL-REGEX,^https:\/\/utoken\.umeng\.com\/api\/updateZdata\/v2$
 
-DOMAIN-SUFFIX,cc.m.jd.com
+DOMAIN-SUFFIX,cdn.synergypeak.org
+
 DOMAIN-SUFFIX,cnzz.com
 DOMAIN-SUFFIX,hm.baidu.com
 DOMAIN-SUFFIX,rm.sina.com.cn
