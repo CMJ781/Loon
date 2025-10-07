@@ -20,6 +20,10 @@ DOMAIN-SUFFIX,52sf.ga
 DOMAIN-SUFFIX,tvfix.org
 DOMAIN-SUFFIX,vercel.app
 DOMAIN-SUFFIX,notion.site
+DOMAIN-SUFFIX,kumgrb.xyz
+
+
+
 
 DOMAIN-KEYWORD,mp43
 
@@ -29,14 +33,9 @@ USER-AGENT,Infuse*
 
 IP-CIDR,45.116.152.0/22,no-resolve
 
-# Nexitally 佩奇官网
-DOMAIN-SUFFIX,nxboom.com
-DOMAIN-SUFFIX,nexitally.com
-
 # > Apple
-DOMAIN-SUFFIX,apps.apple.com
-DOMAIN,swcdn.apple.com
-DOMAIN,updates.cdn-apple.com
+DOMAIN-SUFFIX,swcdn.apple.com
+DOMAIN-SUFFIX,updates.cdn-apple.com
 DOMAIN,iosapps.itunes.apple.com
 DOMAIN,osxapps.itunes.apple.com
 DOMAIN,updates-http.cdn-apple.com
@@ -53,4 +52,3 @@ PROCESS-NAME,Backup and Sync
 PROCESS-NAME,Day One
 PROCESS-NAME,Resilio Sync
 PROCESS-NAME,Slack
-
