@@ -13,6 +13,9 @@ DOMAIN-KEYWORD,apple-relay
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,grok.com
 
+# Copilot
+DOMAIN-SUFFIX,studiostaticassetsprod.azureedge.net
+
 # DeepSeek
 DOMAIN-SUFFIX,deepseek.com
 DOMAIN-SUFFIX,portal101.cn
