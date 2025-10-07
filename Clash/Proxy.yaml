@@ -19,16 +19,14 @@ payload:
   - DOMAIN-SUFFIX,tvfix.org
   - DOMAIN-SUFFIX,vercel.app
   - DOMAIN-SUFFIX,notion.site
+  - DOMAIN-SUFFIX,kumgrb.xyz
   - DOMAIN-KEYWORD,mp43
   - USER-AGENT,bose*
   - USER-AGENT,MKPlayer*
   - USER-AGENT,Infuse*
   - IP-CIDR,45.116.152.0/22,no-resolve
-  - DOMAIN-SUFFIX,nxboom.com
-  - DOMAIN-SUFFIX,nexitally.com
-  - DOMAIN-SUFFIX,apps.apple.com
-  - DOMAIN,swcdn.apple.com
-  - DOMAIN,updates.cdn-apple.com
+  - DOMAIN-SUFFIX,swcdn.apple.com
+  - DOMAIN-SUFFIX,updates.cdn-apple.com
   - DOMAIN,iosapps.itunes.apple.com
   - DOMAIN,osxapps.itunes.apple.com
   - DOMAIN,updates-http.cdn-apple.com
