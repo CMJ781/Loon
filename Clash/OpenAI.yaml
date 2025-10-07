@@ -1,5 +1,4 @@
 payload:
-  - DOMAIN-SUFFIX,api.aiproxy.io
   - DOMAIN,api.note.slax.app
   - DOMAIN-SUFFIX,slax.app
   - DOMAIN-SUFFIX,apple-relay.apple.com
@@ -11,3 +10,4 @@ payload:
   - DOMAIN-SUFFIX,portal101.cn
   - DOMAIN-SUFFIX,apple-relay.cloudflare.com
   - DOMAIN-SUFFIX,apple-relay.apple.com
+  - DOMAIN-SUFFIX,sora.com
