@@ -1,4 +1,20 @@
 # DIRECT  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
+
+# Nexitally 等机场节点订阅
+OR,((DOMAIN-SUFFIX,kelee.one,extended-matching),(DOMAIN-SUFFIX,drrmjd.lol,extended-matching),(DOMAIN-SUFFIX,sub.nexconvert.com,extended-matching),(DOMAIN-SUFFIX,cdn.synergypeak.org,extended-matching))
+
+# 测速网站
+OR,((DOMAIN-SUFFIX,ipcheck.ing,extended-matching),(DOMAIN-SUFFIX,ip233.cn,extended-matching),(DOMAIN-SUFFIX,speedtest.cn,extended-matching))
+
+# DDNS时 IP地址接口查询直连
+OR,((DOMAIN-SUFFIX,66666.host,extended-matching),(DOMAIN-SUFFIX,666666.host,extended-matching),(DOMAIN-SUFFIX,ipip.net,extended-matching),(DOMAIN-SUFFIX,ipw.cn,extended-matching),(DOMAIN-SUFFIX,ddnspod.com,extended-matching),(DOMAIN-KEYWORD,test-ipv6,extended-matching),(DOMAIN,ip.3322.net,extended-matching))
+
+# 下载软件直连
+OR,((DOMAIN-SUFFIX,cdn-apple.com,extended-matching),(DOMAIN-KEYWORD,aria2,extended-matching),(DOMAIN-KEYWORD,thunder,extended-matching),(DOMAIN-KEYWORD,xlliveud,extended-matching),(DOMAIN-KEYWORD,xunlei,extended-matching),(DOMAIN-KEYWORD,yunpan,extended-matching),(PROCESS-NAME,BitComet),(PROCESS-NAME,DownloadService),(PROCESS-NAME,Downie*),(PROCESS-NAME,Folx),(PROCESS-NAME,NetTransport),(PROCESS-NAME,Thunder),(PROCESS-NAME,Transmission),(PROCESS-NAME,WebTorrent),(PROCESS-NAME,WebTorrentHelper), (PROCESS-NAME,Weiyun),(PROCESS-NAME,aria2c),(PROCESS-NAME,fdm),(PROCESS-NAME,qbittorrent),(PROCESS-NAME,uTorrent))
+
+# 零星放行规则
+OR,((DOMAIN-SUFFIX,file.myqcloud.com,extended-matching),(DOMAIN-SUFFIX,todesk.com,extended-matching))
+
 DOMAIN,dfzq.con.cn
 DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
 DOMAIN,speedtest.jsinfo.net
@@ -130,7 +146,6 @@ DOMAIN-KEYWORD,thunder
 DOMAIN-KEYWORD,xlliveud
 DOMAIN-KEYWORD,xunlei
 DOMAIN-KEYWORD,yunpan
-URL-REGEX,assets\d+\.xboxlive\.(com|cn)
 PROCESS-NAME,BitComet
 PROCESS-NAME,DownloadService
 PROCESS-NAME,Folx
