@@ -12,8 +12,8 @@ OR,((DOMAIN-SUFFIX,66666.host,extended-matching),(DOMAIN-SUFFIX,666666.host,exte
 # 下载软件直连
 OR,((DOMAIN-SUFFIX,cdn-apple.com,extended-matching),(DOMAIN-KEYWORD,aria2,extended-matching),(DOMAIN-KEYWORD,thunder,extended-matching),(DOMAIN-KEYWORD,xlliveud,extended-matching),(DOMAIN-KEYWORD,xunlei,extended-matching),(DOMAIN-KEYWORD,yunpan,extended-matching),(PROCESS-NAME,BitComet),(PROCESS-NAME,DownloadService),(PROCESS-NAME,Downie*),(PROCESS-NAME,Folx),(PROCESS-NAME,NetTransport),(PROCESS-NAME,Thunder),(PROCESS-NAME,Transmission),(PROCESS-NAME,WebTorrent),(PROCESS-NAME,WebTorrentHelper), (PROCESS-NAME,Weiyun),(PROCESS-NAME,aria2c),(PROCESS-NAME,fdm),(PROCESS-NAME,qbittorrent),(PROCESS-NAME,uTorrent))
 
-# 零星放行规则
-OR,((DOMAIN-SUFFIX,file.myqcloud.com,extended-matching),(DOMAIN-SUFFIX,todesk.com,extended-matching))
+# 远程控制直连规则
+OR,((DOMAIN-SUFFIX,asklink.com,extended-matching),(DOMAIN-SUFFIX,todesk.com,extended-matching))
 
 DOMAIN,dfzq.con.cn
 DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
@@ -65,9 +65,7 @@ DOMAIN-SUFFIX,mobile.12306.cn
 DOMAIN-SUFFIX,steamcontent.com
 DOMAIN-SUFFIX,airchina.com
 DOMAIN-SUFFIX,wifi.airchina.com
-DOMAIN-SUFFIX,todesk.com
 DOMAIN-SUFFIX,file.myqcloud.com
-DOMAIN-SUFFIX,asklink.com
 
 # 佩奇订阅
 DOMAIN-SUFFIX,drrmjd.lol
