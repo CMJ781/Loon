@@ -3,17 +3,6 @@ payload:
   - DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
   - DOMAIN,speedtest.jsinfo.net
   - DOMAIN-SUFFIX,cupid.iqiyi.com
-  - PROCESS-NAME,devcon.exe
-  - PROCESS-NAME,DriverInstaller.exe
-  - PROCESS-NAME,CrashReport.exe
-  - PROCESS-NAME,SunloginClient.exe
-  - PROCESS-NAME,ToDesk_Setup.exe
-  - PROCESS-NAME,ToDesk_Session.exe
-  - PROCESS-NAME,ToDesk_Service.exe
-  - PROCESS-NAME,ToDesk.exe
-  - PROCESS-NAME,mstsc.exe
-  - DOMAIN-SUFFIX,ui.com
-  - DOMAIN-SUFFIX,todesk.com
   - DOMAIN-SUFFIX,mcc460.pub.3gppnetwork.org
   - DOMAIN,epdg.epc.mnc11.mcc460.pub.3gppnetwork.org
   - DOMAIN,epdg.epc.mnc03.mcc460.pub.3gppnetwork.org
@@ -43,19 +32,8 @@ payload:
   - DOMAIN-SUFFIX,airchina.com
   - DOMAIN-SUFFIX,wifi.airchina.com
   - DOMAIN-SUFFIX,todesk.com
-  - DOMAIN,dl.wechat.com
-  - DOMAIN,dldir1.qq.com
-  - DOMAIN,dldir1v6.qq.com
-  - DOMAIN-SUFFIX,xingxingxsw.com
-  - DOMAIN-SUFFIX,m.tcknh.com
-  - DOMAIN-SUFFIX,sub.nexconvert.com
+  - DOMAIN-SUFFIX,file.myqcloud.com
   - DOMAIN-SUFFIX,drrmjd.lol
-  - DOMAIN-SUFFIX,kelee.one
-  - DOMAIN-SUFFIX,ipcheck.ing
-  - DOMAIN-SUFFIX,ip233.cn
-  - DOMAIN-SUFFIX,speedtest.cn
-  - DOMAIN-SUFFIX,ipw.cn
-  - DOMAIN-KEYWORD,dl-a10b-
   - DOMAIN-KEYWORD,h-world
   - DOMAIN-KEYWORD,hantinghotels
   - DOMAIN-KEYWORD,homeinns
@@ -92,12 +70,21 @@ payload:
   - IP-CIDR,180.76.76.76/32,no-resolve
   - IP-CIDR,182.254.116.0/32,no-resolve
   - DOMAIN,github.pengym.workers.dev
+  - USER-AGENT,velo*
+  - DOMAIN-KEYWORD,velobank
+  - DOMAIN-KEYWORD,eastwestbank
+  - DOMAIN-SUFFIX,omtrdc.net
+  - DOMAIN-SUFFIX,assureid.net
+  - DOMAIN-SUFFIX,velo.helpshift.com
   - DOMAIN-SUFFIX,ls.apple.com
   - DOMAIN-SUFFIX,push.apple.com
   - DOMAIN-SUFFIX,store.apple.com
   - DOMAIN-SUFFIX,push-apple.com.akadns.net
-  - DOMAIN,frontier-aweme.snssdk.com
-  - AND,((DOMAIN-KEYWORD,frontier-aweme-),(AND,((OR,((DOMAIN-KEYWORD,-ipa.),(DOMAIN-KEYWORD,-ipainner.),(DOMAIN-KEYWORD,-origin.),(DOMAIN-KEYWORD,-ipainner-))),(OR,((DOMAIN-SUFFIX,snssdk.com),(DOMAIN-SUFFIX, amemv.com))))))
+  - DOMAIN,yasd.royli.dev
+  - DOMAIN,clash.razord.top
+  - DOMAIN,yacd.haishan.me
+  - DOMAIN,boxjs.com
+  - DOMAIN,boxjs.net
   - DOMAIN-SUFFIX,hiwifi.com
   - DOMAIN-SUFFIX,leike.cc
   - DOMAIN-SUFFIX,miwifi.com
