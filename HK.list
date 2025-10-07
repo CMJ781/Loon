@@ -31,3 +31,6 @@ DOMAIN,hhk.prod.ondemandconnectivity.com
 DOMAIN,epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.geo.mnc000.mcc454.pub.3gppnetwork.org
+
+# 零星规则补充
+DOMAIN-SUFFIX,origin-a.akamaihd.net
