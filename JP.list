@@ -5,6 +5,15 @@ DOMAIN-SUFFIX,waqi.info
 # 数字中国
 DOMAIN-SUFFIX,chinadigitaltimes.net
 
+# GoogleDrive 分流规则
+DOMAIN-SUFFIX,drivefrontend-pa.googleapis.com
+DOMAIN-SUFFIX,signaler-pa.googleapis.com
+DOMAIN-SUFFIX,fcmconnection.googleapis.com
+PROCESS-NAME,Google Drive Helper (Renderer)
+PROCESS-NAME,Google Drive Helper (GPU)
+PROCESS-NAME,Google Drive Helper
+PROCESS-NAME,Google Drive
+
 # XXX
 DOMAIN-KEYWORD,hentai
 DOMAIN-KEYWORD,missav
