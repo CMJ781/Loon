@@ -20,6 +20,20 @@ DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
 DOMAIN,speedtest.jsinfo.net
 DOMAIN-SUFFIX,cupid.iqiyi.com
 
+# > Apple
+DOMAIN-SUFFIX,swcdn.apple.com
+DOMAIN-SUFFIX,updates.cdn-apple.com
+DOMAIN,iosapps.itunes.apple.com
+DOMAIN,osxapps.itunes.apple.com
+DOMAIN,updates-http.cdn-apple.com
+DOMAIN,iosapps.itunes.g.aaplimg.com
+DOMAIN,hls.itunes.apple.com.mwcname.com
+DOMAIN,hls.itunes.apple.com.mwcname.com.cd23f.com
+DOMAIN,k128-iosapps-all.gslb.ksyuncdn.com
+DOMAIN,iosapps-cn-lb.dl-apple.com.akadns.net
+DOMAIN,iosapps.itunes.apple.com.download.ks-cdn.com
+DOMAIN,iosapps.itunes.apple.com.m.alikunlun.net
+
 # 中国电信WLAN通话
 DOMAIN-SUFFIX,mcc460.pub.3gppnetwork.org
 DOMAIN,epdg.epc.mnc11.mcc460.pub.3gppnetwork.org
