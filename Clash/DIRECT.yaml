@@ -38,6 +38,7 @@ payload:
   - DOMAIN-SUFFIX,wifi.airchina.com
   - DOMAIN-SUFFIX,todesk.com
   - DOMAIN-SUFFIX,file.myqcloud.com
+  - DOMAIN-SUFFIX,asklink.com
   - DOMAIN-SUFFIX,drrmjd.lol
   - DOMAIN-KEYWORD,h-world
   - DOMAIN-KEYWORD,hantinghotels
