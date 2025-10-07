@@ -68,13 +68,10 @@ payload:
   - IP-CIDR,61.177.196.114/32,no-resolve
   - IP-CIDR,58.221.171.162/32,no-resolve
   - IP-CIDR,60.247.27.129/32,no-resolve
-  - IP-CIDR,101.6.6.6/32,no-resolve
-  - IP-CIDR,119.28.28.28/32,no-resolve
-  - IP-CIDR,119.29.29.29/32,no-resolve
-  - IP-CIDR,223.5.5.5/32,no-resolve
-  - IP-CIDR,223.6.6.6/32,no-resolve
-  - IP-CIDR,180.76.76.76/32,no-resolve
+  - IP-CIDR,223.113.1.10/32,no-resolve
   - IP-CIDR,182.254.116.0/32,no-resolve
+  - IP-CIDR,180.76.76.200/32,no-resolve
+  - IP-CIDR,202.90.110.46/32,no-resolve
   - DOMAIN,github.pengym.workers.dev
   - USER-AGENT,velo*
   - DOMAIN-KEYWORD,velobank
@@ -91,6 +88,7 @@ payload:
   - DOMAIN,yacd.haishan.me
   - DOMAIN,boxjs.com
   - DOMAIN,boxjs.net
+  - DOMAIN,vv.video.qq.com
   - DOMAIN-SUFFIX,hiwifi.com
   - DOMAIN-SUFFIX,leike.cc
   - DOMAIN-SUFFIX,miwifi.com
