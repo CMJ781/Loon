@@ -12,10 +12,6 @@ payload:
   - DOMAIN-SUFFIX,safebrowsing.urlsec.qq.com
   - DOMAIN-SUFFIX,safebrowsing.googleapis.com
   - DOMAIN-SUFFIX,lookup.api.bsb.baidu.com
-  - DOMAIN,access.mypikpak.com
-  - DOMAIN,access.pikpak.me
-  - DOMAIN,access.mypikpak.net
-  - DOMAIN,access.pikpakdrive.com
   - DOMAIN,adcdn.tencentmusic.com
   - DOMAIN,ad.tencentmusic.com
   - DOMAIN,adplay.tencentmusic.com
@@ -28,6 +24,7 @@ payload:
   - DOMAIN-SUFFIX,pgdt.ugdtimg.com
   - IP-CIDR,111.47.213.195/32,no-resolve
   - IP-CIDR,101.124.19.122/16,no-resolve
+  - DOMAIN-SUFFIX,order.luckydogsoft.com
   - DOMAIN,img1.360buyimg.com
   - DOMAIN,g.cn.miaozhen.com
   - DOMAIN,iadmatapk.nosdn.127.net
