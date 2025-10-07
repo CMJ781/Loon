@@ -1,9 +1,5 @@
 # 特定OpenAI网址  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
 
-
-# ChatGPT 中转代理
-DOMAIN-SUFFIX,api.aiproxy.io
-
 # SlaxNote
 DOMAIN,api.note.slax.app
 DOMAIN-SUFFIX,slax.app
@@ -24,3 +20,6 @@ DOMAIN-SUFFIX,portal101.cn
 # 外版手机+国区 iCloud 可以使用 Apple intelligence
 DOMAIN-SUFFIX,apple-relay.cloudflare.com
 DOMAIN-SUFFIX,apple-relay.apple.com
+
+# Sora
+DOMAIN-SUFFIX,sora.com
