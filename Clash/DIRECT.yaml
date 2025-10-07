@@ -3,7 +3,7 @@ payload:
   - OR,((DOMAIN-SUFFIX,ipcheck.ing,extended-matching),(DOMAIN-SUFFIX,ip233.cn,extended-matching),(DOMAIN-SUFFIX,speedtest.cn,extended-matching))
   - OR,((DOMAIN-SUFFIX,66666.host,extended-matching),(DOMAIN-SUFFIX,666666.host,extended-matching),(DOMAIN-SUFFIX,ipip.net,extended-matching),(DOMAIN-SUFFIX,ipw.cn,extended-matching),(DOMAIN-SUFFIX,ddnspod.com,extended-matching),(DOMAIN-KEYWORD,test-ipv6,extended-matching),(DOMAIN,ip.3322.net,extended-matching))
   - OR,((DOMAIN-SUFFIX,cdn-apple.com,extended-matching),(DOMAIN-KEYWORD,aria2,extended-matching),(DOMAIN-KEYWORD,thunder,extended-matching),(DOMAIN-KEYWORD,xlliveud,extended-matching),(DOMAIN-KEYWORD,xunlei,extended-matching),(DOMAIN-KEYWORD,yunpan,extended-matching),(PROCESS-NAME,BitComet),(PROCESS-NAME,DownloadService),(PROCESS-NAME,Downie*),(PROCESS-NAME,Folx),(PROCESS-NAME,NetTransport),(PROCESS-NAME,Thunder),(PROCESS-NAME,Transmission),(PROCESS-NAME,WebTorrent),(PROCESS-NAME,WebTorrentHelper), (PROCESS-NAME,Weiyun),(PROCESS-NAME,aria2c),(PROCESS-NAME,fdm),(PROCESS-NAME,qbittorrent),(PROCESS-NAME,uTorrent))
-  - OR,((DOMAIN-SUFFIX,file.myqcloud.com,extended-matching),(DOMAIN-SUFFIX,todesk.com,extended-matching))
+  - OR,((DOMAIN-SUFFIX,asklink.com,extended-matching),(DOMAIN-SUFFIX,todesk.com,extended-matching))
   - DOMAIN,dfzq.con.cn
   - DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
   - DOMAIN,speedtest.jsinfo.net
@@ -48,9 +48,7 @@ payload:
   - DOMAIN-SUFFIX,steamcontent.com
   - DOMAIN-SUFFIX,airchina.com
   - DOMAIN-SUFFIX,wifi.airchina.com
-  - DOMAIN-SUFFIX,todesk.com
   - DOMAIN-SUFFIX,file.myqcloud.com
-  - DOMAIN-SUFFIX,asklink.com
   - DOMAIN-SUFFIX,drrmjd.lol
   - DOMAIN-KEYWORD,h-world
   - DOMAIN-KEYWORD,hantinghotels
