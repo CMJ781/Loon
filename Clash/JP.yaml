@@ -2,6 +2,13 @@ payload:
   - DOMAIN-SUFFIX,fancl.co.jp
   - DOMAIN-SUFFIX,waqi.info
   - DOMAIN-SUFFIX,chinadigitaltimes.net
+  - DOMAIN-SUFFIX,drivefrontend-pa.googleapis.com
+  - DOMAIN-SUFFIX,signaler-pa.googleapis.com
+  - DOMAIN-SUFFIX,fcmconnection.googleapis.com
+  - PROCESS-NAME,Google Drive Helper (Renderer)
+  - PROCESS-NAME,Google Drive Helper (GPU)
+  - PROCESS-NAME,Google Drive Helper
+  - PROCESS-NAME,Google Drive
   - DOMAIN-KEYWORD,hentai
   - DOMAIN-KEYWORD,missav
   - DOMAIN-SUFFIX,0xxx.ws
