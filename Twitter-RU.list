@@ -1,4 +1,7 @@
 # Twitter 图片及流媒体  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
 # > Twitter 图片及流媒体
-DOMAIN-SUFFIX,twimg.com
-DOMAIN-SUFFIX,twitpic.com
+# DOMAIN-SUFFIX,twimg.com
+# DOMAIN-SUFFIX,twitpic.com
+
+# > Twitter 特定地址走俄罗斯
+DOMAIN,api.twitter.com
