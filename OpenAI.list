@@ -4,7 +4,7 @@
 DOMAIN,api.note.slax.app
 DOMAIN-SUFFIX,slax.app
 
-# Apple ChatGTP
+# Apple ChatGTP，使用 Apple intelligence
 DOMAIN-SUFFIX,apple-relay.apple.com
 DOMAIN-SUFFIX,apple-relay.cloudflare.com
 DOMAIN-SUFFIX,apple-relay.fastly-edge.com
@@ -25,10 +25,6 @@ DOMAIN-SUFFIX,studiostaticassetsprod.azureedge.net
 # DeepSeek
 DOMAIN-SUFFIX,deepseek.com
 DOMAIN-SUFFIX,portal101.cn
-
-# 外版手机+国区 iCloud 可以使用 Apple intelligence
-DOMAIN-SUFFIX,apple-relay.cloudflare.com
-DOMAIN-SUFFIX,apple-relay.apple.com
 
 # Sora     # https://raw.githubusercontent.com/alanhe421/surge-config/refs/heads/main/rules/AI.rule
 DOMAIN-SUFFIX,sora.com
