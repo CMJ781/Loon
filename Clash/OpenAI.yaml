@@ -3,9 +3,16 @@ payload:
   - DOMAIN-SUFFIX,slax.app
   - DOMAIN-SUFFIX,apple-relay.apple.com
   - DOMAIN-SUFFIX,apple-relay.cloudflare.com
+  - DOMAIN-SUFFIX,apple-relay.fastly-edge.com
+  - DOMAIN-SUFFIX,gateway.icloud.com
+  - DOMAIN-SUFFIX,guzzoni.apple.com
+  - DOMAIN-SUFFIX,cp4.cloudflare.com
+  - DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
+  - DOMAIN-SUFFIX,apps.mzstatic.com
   - DOMAIN-KEYWORD,apple-relay
   - DOMAIN-SUFFIX,x.ai
   - DOMAIN-SUFFIX,grok.com
+  - DOMAIN-SUFFIX,studiostaticassetsprod.azureedge.net
   - DOMAIN-SUFFIX,deepseek.com
   - DOMAIN-SUFFIX,portal101.cn
   - DOMAIN-SUFFIX,apple-relay.cloudflare.com
