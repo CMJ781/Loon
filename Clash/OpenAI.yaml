@@ -15,8 +15,6 @@ payload:
   - DOMAIN-SUFFIX,studiostaticassetsprod.azureedge.net
   - DOMAIN-SUFFIX,deepseek.com
   - DOMAIN-SUFFIX,portal101.cn
-  - DOMAIN-SUFFIX,apple-relay.cloudflare.com
-  - DOMAIN-SUFFIX,apple-relay.apple.com
   - DOMAIN-SUFFIX,sora.com
   - DOMAIN-SUFFIX,anthropic.com
   - DOMAIN-SUFFIX,huggingface.co
