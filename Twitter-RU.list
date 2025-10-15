@@ -4,4 +4,6 @@
 # DOMAIN-SUFFIX,twitpic.com
 
 # > Twitter 特定地址走俄罗斯
-DOMAIN,api.twitter.com
+
+DOMAIN-SUFFIX,api.twitter.com
+DOMAIN-SUFFIX,twitter.com
