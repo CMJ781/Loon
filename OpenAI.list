@@ -41,3 +41,8 @@ DOMAIN-KEYWORD,chatgpt
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,trae.ai
+
+# Plaud
+DOMAIN-SUFFIX,plaud.ai
+DOMAIN-SUFFIX,zendesk.com
+DOMAIN-KEYWORD,plaud
