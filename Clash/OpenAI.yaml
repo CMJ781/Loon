@@ -29,3 +29,6 @@ payload:
   - DOMAIN-SUFFIX,claude.ai
   - DOMAIN-SUFFIX,gemini.google.com
   - DOMAIN-SUFFIX,trae.ai
+  - DOMAIN-SUFFIX,plaud.ai
+  - DOMAIN-SUFFIX,zendesk.com
+  - DOMAIN-KEYWORD,plaud
