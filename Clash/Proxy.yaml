@@ -23,6 +23,7 @@ payload:
   - DOMAIN-SUFFIX,yo-star.com
   - DOMAIN-SUFFIX,safebrowsing.apple
   - DOMAIN-SUFFIX,fw-download.ubnt.com
+  - DOMAIN-SUFFIX,id.ui.direct
   - DOMAIN-SUFFIX,ui.com
   - DOMAIN-SUFFIX,ubnt.com
   - DOMAIN-KEYWORD,mp43
