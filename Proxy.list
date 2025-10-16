@@ -26,6 +26,8 @@ DOMAIN-SUFFIX,safebrowsing.apple
 
 # Ubnt路由器固件下载
 DOMAIN-SUFFIX,fw-download.ubnt.com
+DOMAIN-SUFFIX,ui.com
+DOMAIN-SUFFIX,ubnt.com
 
 DOMAIN-KEYWORD,mp43
 
