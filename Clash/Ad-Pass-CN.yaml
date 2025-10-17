@@ -18,7 +18,11 @@ payload:
   - DOMAIN-SUFFIX,cmj781.cc
   - DOMAIN-SUFFIX,cmj781.vip
   - DOMAIN-SUFFIX,kelee.one
+  - DOMAIN-SUFFIX,fw-download.ubnt.com
+  - DOMAIN-SUFFIX,id.ui.direct
   - DOMAIN-SUFFIX,cn.store.ui.com
+  - DOMAIN-SUFFIX,ui.com
+  - DOMAIN-SUFFIX,ubnt.com
   - DOMAIN,revenuecat.com
   - DOMAIN-SUFFIX,fileball.app
   - DOMAIN,sub.nexconvert.com
