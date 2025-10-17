@@ -19,7 +19,13 @@ DOMAIN-SUFFIX,im.tieba.baidu.com
 DOMAIN-SUFFIX,cmj781.cc
 DOMAIN-SUFFIX,cmj781.vip
 DOMAIN-SUFFIX,kelee.one
+
+# Ubnt路由器
+DOMAIN-SUFFIX,fw-download.ubnt.com
+DOMAIN-SUFFIX,id.ui.direct
 DOMAIN-SUFFIX,cn.store.ui.com
+DOMAIN-SUFFIX,ui.com
+DOMAIN-SUFFIX,ubnt.com
 
 # Fileball
 DOMAIN,revenuecat.com
