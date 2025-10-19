@@ -9,6 +9,11 @@ payload:
   - DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
   - DOMAIN,speedtest.jsinfo.net
   - DOMAIN-SUFFIX,cupid.iqiyi.com
+  - DOMAIN-SUFFIX,amemv.com
+  - DOMAIN-SUFFIX,douyinvod.com
+  - DOMAIN-SUFFIX,gifshow.com
+  - DOMAIN-SUFFIX,apissl.ksapisrv.com
+  - DOMAIN-SUFFIX,edith.xiaohongshu.com
   - DOMAIN-SUFFIX,swcdn.apple.com
   - DOMAIN-SUFFIX,updates.cdn-apple.com
   - DOMAIN,iosapps.itunes.apple.com
