@@ -21,6 +21,7 @@ payload:
   - DOMAIN,iosapps-cn-lb.dl-apple.com.akadns.net
   - DOMAIN,iosapps.itunes.apple.com.download.ks-cdn.com
   - DOMAIN,iosapps.itunes.apple.com.m.alikunlun.net
+  - DOMAIN,app.localhost.qaq.wiki
   - DOMAIN-SUFFIX,mcc460.pub.3gppnetwork.org
   - DOMAIN,epdg.epc.mnc11.mcc460.pub.3gppnetwork.org
   - DOMAIN,epdg.epc.mnc03.mcc460.pub.3gppnetwork.org
