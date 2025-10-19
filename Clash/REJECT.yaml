@@ -32,6 +32,8 @@ payload:
   - DOMAIN,httpdns.n.netease.com
   - DOMAIN-SUFFIX,163jiasu.com
   - DOMAIN,ntb.lanjie100.com
+  - DOMAIN,heic.alicdn.com
+  - DOMAIN-SUFFIX,h-adashx.ut.taobao.com
   - DOMAIN,dig.zjurl.cn,extended-matching
   - DOMAIN,dig.bdurl.net
   - AND,((DOMAIN-SUFFIX,zijieapi.com), (DOMAIN-KEYWORD,ad))
