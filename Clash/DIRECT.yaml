@@ -3,7 +3,7 @@ payload:
   - OR,((DOMAIN-SUFFIX,ipcheck.ing),(DOMAIN-SUFFIX,ip233.cn),(DOMAIN-SUFFIX,speedtest.cn)),extended-matching
   - OR,((DOMAIN-SUFFIX,66666.host),(DOMAIN-SUFFIX,666666.host),(DOMAIN-SUFFIX,ipip.net),(DOMAIN-SUFFIX,ipw.cn),(DOMAIN-SUFFIX,ddnspod.com),(DOMAIN-KEYWORD,test-ipv6),(DOMAIN,ip.3322.net)),extended-matching
   - OR,((DOMAIN-SUFFIX,cdn-apple.com),(DOMAIN-KEYWORD,aria2),(DOMAIN-KEYWORD,thunder),(DOMAIN-KEYWORD,xlliveud),(DOMAIN-KEYWORD,xunlei),(DOMAIN-KEYWORD,yunpan)),extended-matching
-  - OR,(PROCESS-NAME,BitComet),(PROCESS-NAME,DownloadService),(PROCESS-NAME,Downie*),(PROCESS-NAME,Folx),(PROCESS-NAME,NetTransport),(PROCESS-NAME,Thunder),(PROCESS-NAME,Transmission),(PROCESS-NAME,WebTorrent),(PROCESS-NAME,WebTorrentHelper), (PROCESS-NAME,Weiyun),(PROCESS-NAME,aria2c),(PROCESS-NAME,fdm),(PROCESS-NAME,qbittorrent),(PROCESS-NAME,uTorrent))
+  - OR,((PROCESS-NAME,BitComet),(PROCESS-NAME,DownloadService),(PROCESS-NAME,Downie*),(PROCESS-NAME,Folx),(PROCESS-NAME,NetTransport),(PROCESS-NAME,Thunder),(PROCESS-NAME,Transmission),(PROCESS-NAME,WebTorrent),(PROCESS-NAME,WebTorrentHelper), (PROCESS-NAME,Weiyun),(PROCESS-NAME,aria2c),(PROCESS-NAME,fdm),(PROCESS-NAME,qbittorrent),(PROCESS-NAME,uTorrent))
   - OR,((DOMAIN-SUFFIX,asklink.com,extended-matching),(DOMAIN-SUFFIX,todesk.com,extended-matching))
   - DOMAIN,dfzq.con.cn
   - DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
