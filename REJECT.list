@@ -54,6 +54,10 @@ DOMAIN-SUFFIX,163jiasu.com
 # > 拦截100
 DOMAIN,ntb.lanjie100.com
 
+# > 拦截淘宝跳开屏
+DOMAIN,heic.alicdn.com
+DOMAIN-SUFFIX,h-adashx.ut.taobao.com
+
 # > 番茄小说 去广告
 DOMAIN,dig.zjurl.cn,extended-matching
 DOMAIN,dig.bdurl.net
