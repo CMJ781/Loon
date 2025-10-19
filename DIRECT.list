@@ -35,6 +35,9 @@ DOMAIN,iosapps-cn-lb.dl-apple.com.akadns.net
 DOMAIN,iosapps.itunes.apple.com.download.ks-cdn.com
 DOMAIN,iosapps.itunes.apple.com.m.alikunlun.net
 
+# > asspp在确定证书网络没有问题的前提下DIRECT下方可以打开vpn安装app
+DOMAIN,app.localhost.qaq.wiki
+
 # 中国电信WLAN通话
 DOMAIN-SUFFIX,mcc460.pub.3gppnetwork.org
 DOMAIN,epdg.epc.mnc11.mcc460.pub.3gppnetwork.org
