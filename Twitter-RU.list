@@ -6,5 +6,5 @@
 # > Twitter 特定地址走俄罗斯
 
 DOMAIN-SUFFIX,api.twitter.com
-DOMAIN-SUFFIX,twitter.com
 DOMAIN,global.dev.cftls.t.co
+DOMAIN-SUFFIX,twitter.com
