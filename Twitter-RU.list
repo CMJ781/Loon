@@ -7,4 +7,4 @@
 
 DOMAIN-SUFFIX,api.twitter.com
 DOMAIN-SUFFIX,twitter.com
-# DOMAIN-SUFFIX,t.co
+DOMAIN,global.dev.cftls.t.co
