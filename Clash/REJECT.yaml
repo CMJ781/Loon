@@ -8,6 +8,7 @@ payload:
   - DOMAIN,mall.bilibili.com
   - DOMAIN,passport.bilibili.com
   - DOMAIN,app-site-association.cdn-apple.com
+  - DOMAIN-SUFFIX,msmp.abchina.com.cn
   - DOMAIN-SUFFIX,gwp.xiaojukeji.com
   - DOMAIN-SUFFIX,u3.ucweb.com
   - DOMAIN-SUFFIX,safebrowsing.urlsec.qq.com
