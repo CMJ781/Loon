@@ -12,6 +12,9 @@ DOMAIN,passport.bilibili.com
 # Safari 访问防跳转 App
 DOMAIN,app-site-association.cdn-apple.com
 
+# 农行VPN检测
+DOMAIN-SUFFIX,msmp.abchina.com.cn
+
 # 滴滴出行
 DOMAIN-SUFFIX,gwp.xiaojukeji.com
 
