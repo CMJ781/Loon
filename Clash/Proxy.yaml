@@ -22,6 +22,7 @@ payload:
   - DOMAIN-SUFFIX,kumgrb.xyz
   - DOMAIN-SUFFIX,yo-star.com
   - DOMAIN-SUFFIX,safebrowsing.apple
+  - DOMAIN-SUFFIX,imgur.com
   - DOMAIN-KEYWORD,mp43
   - USER-AGENT,bose*
   - USER-AGENT,MKPlayer*
