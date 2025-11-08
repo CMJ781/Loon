@@ -1,0 +1,39 @@
+name: Update WeatherKit Module
+
+on:
+  schedule:
+    # 每小时运行一次
+    - cron: '0 * * * *'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  check-and-update:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Download latest module
+      run: |
+        # 下载最新的模块文件
+        curl -L -o iRingo.WeatherKit.sgmodule "https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.sgmodule"
+        
+    - name: Check if file changed
+      id: check_changes
+      run: |
+        # 检查文件是否有变化
+        if git diff --quiet iRingo.WeatherKit.sgmodule; then
+          echo "changes=false" >> $GITHUB_OUTPUT
+        else
+          echo "changes=true" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Commit and push if changed
+      if: steps.check_changes.outputs.changes == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add iRingo.WeatherKit.sgmodule
+        git commit -m "chore: update iRingo.WeatherKit.sgmodule $(date -u)"
+        git push
