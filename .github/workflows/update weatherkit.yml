@@ -1,4 +1,4 @@
-name: Update and Modify WeatherKit Module
+name: Update WeatherKit
 
 on:
   schedule:
