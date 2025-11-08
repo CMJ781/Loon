@@ -1,4 +1,4 @@
-name: Update LocationService Module
+name: Auto Update LocationService
 
 on:
   schedule:
@@ -14,78 +14,24 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       
-    - name: Download latest module
+    - name: Download and modify module
       run: |
-        # 下载最新的模块文件到临时文件
-        curl -L -o temp_new.sgmodule "https://github.com/NSRingo/LocationService/releases/latest/download/iRingo.LocationService.sgmodule"
+        # 下载最新的模块文件
+        curl -L -o iRingo.LocationService.sgmodule "https://github.com/NSRingo/LocationService/releases/latest/download/iRingo.LocationService.sgmodule"
         
-    - name: Check if file exists
-      id: check_file
-      run: |
-        # 检查当前目录下是否已存在目标文件
-        if [ -f "iRingo.LocationService.sgmodule" ]; then
-          echo "file_exists=true" >> $GITHUB_OUTPUT
-        else
-          echo "file_exists=false" >> $GITHUB_OUTPUT
-        fi
-        
-    - name: Process new file
-      run: |
         # 替换 GeoCountryCode
-        sed -i 's/GeoCountryCode:"US"/GeoCountryCode:"SG"/g' temp_new.sgmodule
+        sed -i 's/GeoCountryCode:"US"/GeoCountryCode:"SG"/g' iRingo.LocationService.sgmodule
         
-    - name: Handle first time setup
-      if: steps.check_file.outputs.file_exists == 'false'
+    - name: Commit and push changes
       run: |
-        # 首次运行，直接使用新文件
-        mv temp_new.sgmodule iRingo.LocationService.sgmodule
-        echo "First time setup completed"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add iRingo.LocationService.sgmodule
         
-    - name: Check for changes
-      id: check_changes
-      if: steps.check_file.outputs.file_exists == 'true'
-      run: |
-        # 处理已存在的临时文件用于比较
-        cp temp_new.sgmodule temp_processed.sgmodule
-        sed -i 's/GeoCountryCode:"US"/GeoCountryCode:"SG"/g' temp_processed.sgmodule
-        
-        # 比较处理后的文件与现有文件
-        if cmp -s temp_processed.sgmodule iRingo.LocationService.sgmodule; then
-          echo "changes=false" >> $GITHUB_OUTPUT
-          echo "No changes detected in source file"
+        # 检查是否有变化，有变化才提交
+        if git diff --staged --quiet; then
+          echo "No changes detected"
         else
-          echo "changes=true" >> $GITHUB_OUTPUT
-          echo "Changes detected in source file"
+          git commit -m "chore: auto update iRingo.LocationService.sgmodule [$(date +'%Y-%m-%d %H:%M')]"
+          git push
         fi
-        
-    - name: Update file if changed
-      if: steps.check_file.outputs.file_exists == 'true' && steps.check_changes.outputs.changes == 'true'
-      run: |
-        # 用处理后的新文件替换旧文件
-        mv temp_processed.sgmodule iRingo.LocationService.sgmodule
-        echo "File updated with latest changes"
-        
-    - name: Cleanup temporary files
-      run: |
-        # 清理临时文件
-        rm -f temp_new.sgmodule temp_processed.sgmodule || true
-        
-    - name: Commit changes if needed
-      id: commit_changes
-      run: |
-        # 检查是否有文件需要提交
-        if git diff --quiet; then
-          echo "commit_needed=false" >> $GITHUB_OUTPUT
-          echo "No changes to commit"
-        else
-          echo "commit_needed=true" >> $GITHUB_OUTPUT
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add iRingo.LocationService.sgmodule
-          git commit -m "chore: update iRingo.LocationService.sgmodule [$(date +'%Y-%m-%d %H:%M')]"
-        fi
-        
-    - name: Push changes
-      if: steps.commit_changes.outputs.commit_needed == 'true'
-      run: |
-        git push
