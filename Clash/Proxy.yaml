@@ -23,6 +23,7 @@ payload:
   - DOMAIN-SUFFIX,yo-star.com
   - DOMAIN-SUFFIX,safebrowsing.apple
   - DOMAIN-SUFFIX,imgur.com
+  - DOMAIN-SUFFIX,lc.paragon-software.com
   - DOMAIN-KEYWORD,mp43
   - USER-AGENT,bose*
   - USER-AGENT,MKPlayer*
