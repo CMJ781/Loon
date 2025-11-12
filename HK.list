@@ -32,6 +32,8 @@ DOMAIN,epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.geo.mnc000.mcc454.pub.3gppnetwork.org
 
+# imgur图床
+DOMAIN-SUFFIX,imgur.com
 
 # 中银香港
 DOMAIN-SUFFIX,bochk.com
