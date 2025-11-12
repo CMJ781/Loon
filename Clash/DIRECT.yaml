@@ -10,6 +10,8 @@ payload:
   - DOMAIN,speedtest.jsinfo.net
   - DOMAIN-SUFFIX,cupid.iqiyi.com
   - DOMAIN-SUFFIX,aqara.com
+  - DOMAIN,api.wifiman.com
+  - DOMAIN,geoip.ubnt.com
   - DOMAIN-SUFFIX,amemv.com
   - DOMAIN-SUFFIX,douyinvod.com
   - DOMAIN-SUFFIX,gifshow.com
