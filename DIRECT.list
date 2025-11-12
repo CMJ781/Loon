@@ -21,6 +21,8 @@ DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
 DOMAIN,speedtest.jsinfo.net
 DOMAIN-SUFFIX,cupid.iqiyi.com
 DOMAIN-SUFFIX,aqara.com
+DOMAIN,api.wifiman.com
+DOMAIN,geoip.ubnt.com
 
 # 抖音修改IP
 DOMAIN-SUFFIX,amemv.com
