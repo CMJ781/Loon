@@ -37,13 +37,14 @@ payload:
   - USER-AGENT,com.google.GVDiale*
   - USER-AGENT,VoiceAp*
   - USER-AGENT,*WeatherFoundation*
-  - DOMAIN,nocable.cc
-  - DOMAIN,fl1.moveonjoy.com
-  - DOMAIN,streamer1.nexgen.bz
-  - DOMAIN,turnerlive.warnermediacdn.com
-  - DOMAIN,moveonjoy-scan.vercel.app
-  - DOMAIN,vs-hls-push-ww-live.akamaized.net
-  - DOMAIN,live-hls-apps-aje-v3-fa.getaj.net
+  - DOMAIN-SUFFIX,,nocable.cc
+  - DOMAIN-SUFFIX,moveonjoy.com
+  - DOMAIN-SUFFIX,nexgen.bz
+  - DOMAIN-SUFFIX,warnermediacdn.com
+  - DOMAIN-SUFFIX,.vercel.app
+  - DOMAIN-SUFFIX,.akamaized.net
+  - DOMAIN-SUFFIX,getaj.net
+  - DOMAIN-SUFFIX,xxip9.top
   - IP-CIDR,143.244.60.30/32,no-resolve
   - URL-REGEX,^https?:\/\/news-assets\.apple\.com\/.*(audio-narrative).*
   - PROCESS-NAME,LookupViewService
