@@ -50,12 +50,12 @@ USER-AGENT,VoiceAp*
 USER-AGENT,*WeatherFoundation*
 
 # APTV用美国在线电视
-DOMAIN-SUFFIX,,nocable.cc
+DOMAIN-SUFFIX,nocable.cc
 DOMAIN-SUFFIX,moveonjoy.com
 DOMAIN-SUFFIX,nexgen.bz
 DOMAIN-SUFFIX,warnermediacdn.com
-DOMAIN-SUFFIX,.vercel.app
-DOMAIN-SUFFIX,.akamaized.net
+DOMAIN-SUFFIX,vercel.app
+DOMAIN-SUFFIX,akamaized.net
 DOMAIN-SUFFIX,getaj.net
 DOMAIN-SUFFIX,xxip9.top
 
