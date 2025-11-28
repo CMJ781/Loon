@@ -49,6 +49,19 @@ USER-AGENT,com.google.GVDiale*
 USER-AGENT,VoiceAp*
 USER-AGENT,*WeatherFoundation*
 
+# APTV用美国在线电视
+DOMAIN,nocable.cc
+DOMAIN,fl1.moveonjoy.com
+DOMAIN,streamer1.nexgen.bz
+DOMAIN,turnerlive.warnermediacdn.com
+DOMAIN,moveonjoy-scan.vercel.app
+DOMAIN,vs-hls-push-ww-live.akamaized.net
+DOMAIN,live-hls-apps-aje-v3-fa.getaj.net
+IP-CIDR,143.244.60.30/32,no-resolve
+
+
+
+
 # Apple News+ Audio
 URL-REGEX,^https?:\/\/news-assets\.apple\.com\/.*(audio-narrative).*
 
