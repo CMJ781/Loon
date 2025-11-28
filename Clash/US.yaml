@@ -45,6 +45,7 @@ payload:
   - DOMAIN-SUFFIX,akamaized.net
   - DOMAIN-SUFFIX,getaj.net
   - DOMAIN-SUFFIX,xxip9.top
+  - DOMAIN-SUFFIX,rc-back.com
   - IP-CIDR,143.244.60.30/32,no-resolve
   - URL-REGEX,^https?:\/\/news-assets\.apple\.com\/.*(audio-narrative).*
   - PROCESS-NAME,LookupViewService
