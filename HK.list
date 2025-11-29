@@ -1,5 +1,13 @@
 # IP Limit-HK  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
-# > 华文电视
+
+# Ubnt路由器
+DOMAIN-SUFFIX,fw-download.ubnt.com
+DOMAIN-SUFFIX,id.ui.direct
+DOMAIN-SUFFIX,cn.store.ui.com
+DOMAIN-SUFFIX,ui.com
+DOMAIN-SUFFIX,ubnt.com
+
+#  华文电视
 USER-AGENT,HWTVMobile*
 DOMAIN-SUFFIX,5itv.tv
 DOMAIN-SUFFIX,ocnttv.com
@@ -43,3 +51,4 @@ DOMAIN-SUFFIX,cmbwinglungbank.com
 
 # 零星规则补充
 DOMAIN-SUFFIX,origin-a.akamaihd.net
+
