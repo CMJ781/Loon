@@ -1,4 +1,9 @@
 payload:
+  - DOMAIN-SUFFIX,fw-download.ubnt.com
+  - DOMAIN-SUFFIX,id.ui.direct
+  - DOMAIN-SUFFIX,cn.store.ui.com
+  - DOMAIN-SUFFIX,ui.com
+  - DOMAIN-SUFFIX,ubnt.com
   - USER-AGENT,HWTVMobile*
   - DOMAIN-SUFFIX,5itv.tv
   - DOMAIN-SUFFIX,ocnttv.com
