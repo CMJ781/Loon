@@ -6,6 +6,7 @@ payload:
   - DOMAIN-SUFFIX,plaud.ai
   - DOMAIN-SUFFIX,zendesk.com
   - DOMAIN-KEYWORD,plaud
+  - DOMAIN,proactivebackend-pa.googleapis.com
   - DOMAIN-SUFFIX,apple-relay.apple.com
   - DOMAIN-SUFFIX,apple-relay.cloudflare.com
   - DOMAIN-SUFFIX,apple-relay.fastly-edge.com
