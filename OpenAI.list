@@ -14,6 +14,9 @@ DOMAIN-SUFFIX,plaud.ai
 DOMAIN-SUFFIX,zendesk.com
 DOMAIN-KEYWORD,plaud
 
+# Google AI引入了新的API
+DOMAIN,proactivebackend-pa.googleapis.com
+
 # Apple ChatGTP，使用 Apple intelligence
 DOMAIN-SUFFIX,apple-relay.apple.com
 DOMAIN-SUFFIX,apple-relay.cloudflare.com
