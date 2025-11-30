@@ -4,6 +4,7 @@ payload:
   - DOMAIN-SUFFIX,googleapis.com
   - DOMAIN-SUFFIX,omtrdc.net
   - DOMAIN-SUFFIX,trusteer.com
+  - DOMAIN-SUFFIX,aritzia.com
   - USER-AGENT,velo*
   - DOMAIN-KEYWORD,velobank
   - DOMAIN-KEYWORD,eastwestbank
