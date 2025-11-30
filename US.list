@@ -4,6 +4,8 @@ DOMAIN-SUFFIX,furla.com
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,omtrdc.net
 DOMAIN-SUFFIX,trusteer.com
+DOMAIN-SUFFIX,aritzia.com
+
 
 # velo bank
 USER-AGENT,velo*
