@@ -9,6 +9,9 @@ DOMAIN-SUFFIX,ingest.sentry.io
 DOMAIN,mall.bilibili.com
 DOMAIN,passport.bilibili.com
 
+# 农行VPN检测
+DOMAIN,msmp.abchina.com.cn
+
 # Safari 访问防跳转 App
 DOMAIN,app-site-association.cdn-apple.com
 
