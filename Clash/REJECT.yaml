@@ -7,6 +7,7 @@ payload:
   - DOMAIN-SUFFIX,ingest.sentry.io
   - DOMAIN,mall.bilibili.com
   - DOMAIN,passport.bilibili.com
+  - DOMAIN,msmp.abchina.com.cn
   - DOMAIN,app-site-association.cdn-apple.com
   - DOMAIN-SUFFIX,msmp.abchina.com.cn
   - DOMAIN-SUFFIX,gwp.xiaojukeji.com
