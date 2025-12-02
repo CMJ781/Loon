@@ -1,4 +1,12 @@
 payload:
+  - DOMAIN,api.flightyapp.com
+  - DOMAIN-SUFFIX,flightyapp.com
+  - DOMAIN,cdn.flightradar24.com
+  - DOMAIN,tiles.flightradar24.com
+  - DOMAIN,mobile.flightradar24.com
+  - DOMAIN,data-feed.flightradar24.com
+  - DOMAIN,free.flightradar24.com
+  - DOMAIN-SUFFIX,flightradar24.com
   - DOMAIN-SUFFIX,fw-download.ubnt.com
   - DOMAIN-SUFFIX,id.ui.direct
   - DOMAIN-SUFFIX,cn.store.ui.com
