@@ -1,5 +1,15 @@
 # IP Limit-HK  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
 
+# Flighty 等飞行软件
+DOMAIN,api.flightyapp.com
+DOMAIN-SUFFIX,flightyapp.com
+DOMAIN,cdn.flightradar24.com
+DOMAIN,tiles.flightradar24.com
+DOMAIN,mobile.flightradar24.com
+DOMAIN,data-feed.flightradar24.com
+DOMAIN,free.flightradar24.com
+DOMAIN-SUFFIX,flightradar24.com
+
 # Ubnt路由器
 DOMAIN-SUFFIX,fw-download.ubnt.com
 DOMAIN-SUFFIX,id.ui.direct
