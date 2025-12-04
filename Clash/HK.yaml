@@ -15,6 +15,8 @@ payload:
   - USER-AGENT,HWTVMobile*
   - DOMAIN-SUFFIX,5itv.tv
   - DOMAIN-SUFFIX,ocnttv.com
+  - DOMAIN-SUFFIX,transferwise.com
+  - DOMAIN-SUFFIX,wise.com
   - USER-AGENT,ijkplayer
   - DOMAIN-SUFFIX,hermes.com
   - DOMAIN-SUFFIX,zaobao.com
