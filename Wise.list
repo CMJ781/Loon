@@ -1,0 +1,5 @@
+# Wise Limit-HK  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
+
+# Wise
+DOMAIN-SUFFIX,transferwise.com
+DOMAIN-SUFFIX,wise.com
