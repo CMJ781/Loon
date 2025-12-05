@@ -22,10 +22,6 @@ USER-AGENT,HWTVMobile*
 DOMAIN-SUFFIX,5itv.tv
 DOMAIN-SUFFIX,ocnttv.com
 
-# Wise 汇款
-DOMAIN-SUFFIX,transferwise.com
-DOMAIN-SUFFIX,wise.com
-
 # IP Limit-HK
 USER-AGENT,ijkplayer
 DOMAIN-SUFFIX,hermes.com
