@@ -109,6 +109,8 @@ payload:
   - DOMAIN,boxjs.com
   - DOMAIN,boxjs.net
   - DOMAIN,vv.video.qq.com
+  - DOMAIN-SUFFIX,bochk.com
+  - DOMAIN-SUFFIX,cmbwinglungbank.com
   - DOMAIN-SUFFIX,hiwifi.com
   - DOMAIN-SUFFIX,leike.cc
   - DOMAIN-SUFFIX,miwifi.com
