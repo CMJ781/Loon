@@ -156,6 +156,12 @@ DOMAIN,boxjs.net
 # 腾讯视频地理位置判断域名
 DOMAIN,vv.video.qq.com
 
+# 中银香港
+DOMAIN-SUFFIX,bochk.com
+
+# 香港招商永隆
+DOMAIN-SUFFIX,cmbwinglungbank.com
+
 # Router
 DOMAIN-SUFFIX,hiwifi.com
 DOMAIN-SUFFIX,leike.cc
