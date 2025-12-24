@@ -53,12 +53,6 @@ DOMAIN,ss.epdg.epc.geo.mnc000.mcc454.pub.3gppnetwork.org
 # imgur图床
 DOMAIN-SUFFIX,imgur.com
 
-# 中银香港
-DOMAIN-SUFFIX,bochk.com
-
-# 香港招商永隆
-DOMAIN-SUFFIX,cmbwinglungbank.com
-
 # 零星规则补充
 DOMAIN-SUFFIX,origin-a.akamaihd.net
 
