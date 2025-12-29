@@ -7,6 +7,7 @@ payload:
   - DOMAIN-SUFFIX,zendesk.com
   - DOMAIN-KEYWORD,plaud
   - DOMAIN,proactivebackend-pa.googleapis.com
+  - DOMAIN-SUFFIX,app-analytics-services.com
   - DOMAIN-SUFFIX,apple-relay.apple.com
   - DOMAIN-SUFFIX,apple-relay.cloudflare.com
   - DOMAIN-SUFFIX,apple-relay.fastly-edge.com
@@ -18,3 +19,4 @@ payload:
   - DOMAIN-SUFFIX,smoot.apple.com
   - DOMAIN-KEYWORD,apple-relay
   - DOMAIN-SUFFIX,huggingface.co
+  - DOMAIN-SUFFIX,midjourney.com
