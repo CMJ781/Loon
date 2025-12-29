@@ -4,7 +4,6 @@
 DOMAIN,api.note.slax.app
 DOMAIN-SUFFIX,slax.app
 
-
 # DeepSeek
 DOMAIN-SUFFIX,deepseek.com
 DOMAIN-SUFFIX,portal101.cn
@@ -16,6 +15,9 @@ DOMAIN-KEYWORD,plaud
 
 # Google AI引入了新的API
 DOMAIN,proactivebackend-pa.googleapis.com
+
+# Google Analytics
+DOMAIN-SUFFIX,app-analytics-services.com
 
 # Apple ChatGTP，使用 Apple intelligence
 DOMAIN-SUFFIX,apple-relay.apple.com
@@ -31,3 +33,6 @@ DOMAIN-KEYWORD,apple-relay
 
 # Sora     # https://raw.githubusercontent.com/alanhe421/surge-config/refs/heads/main/rules/AI.rule
 DOMAIN-SUFFIX,huggingface.co
+
+# Midjourney
+DOMAIN-SUFFIX,midjourney.com
