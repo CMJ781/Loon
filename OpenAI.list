@@ -36,3 +36,6 @@ DOMAIN-SUFFIX,huggingface.co
 
 # Midjourney
 DOMAIN-SUFFIX,midjourney.com
+
+# Affinity Photo 2和Affinity的模型限制了大陆IP和香港IP
+DOMAIN,d3ssuo6fbvr.cloudfront.net
