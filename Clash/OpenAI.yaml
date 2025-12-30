@@ -20,3 +20,4 @@ payload:
   - DOMAIN-KEYWORD,apple-relay
   - DOMAIN-SUFFIX,huggingface.co
   - DOMAIN-SUFFIX,midjourney.com
+  - DOMAIN,d3ssuo6fbvr.cloudfront.net
