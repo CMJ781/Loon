@@ -1,8 +1,5 @@
 # DIRECT  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
 
-# Nexitally 等机场节点订阅
-OR,((DOMAIN-SUFFIX,kelee.one),(DOMAIN-SUFFIX,drrmjd.lol),(DOMAIN-SUFFIX,sub.nexconvert.com),(DOMAIN-SUFFIX,cdn.synergypeak.org),(DOMAIN-SUFFIX,dler.cloud),(DOMAIN-SUFFIX,easysub.net))
-
 # 测速网站
 OR,((DOMAIN-SUFFIX,ipcheck.ing),(DOMAIN-SUFFIX,ip233.cn),(DOMAIN-SUFFIX,speedtest.cn))
 
