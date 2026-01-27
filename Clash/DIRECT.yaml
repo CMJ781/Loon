@@ -1,5 +1,4 @@
 payload:
-  - OR,((DOMAIN-SUFFIX,kelee.one),(DOMAIN-SUFFIX,drrmjd.lol),(DOMAIN-SUFFIX,sub.nexconvert.com),(DOMAIN-SUFFIX,cdn.synergypeak.org),(DOMAIN-SUFFIX,dler.cloud),(DOMAIN-SUFFIX,easysub.net))
   - OR,((DOMAIN-SUFFIX,ipcheck.ing),(DOMAIN-SUFFIX,ip233.cn),(DOMAIN-SUFFIX,speedtest.cn))
   - OR,((DOMAIN-SUFFIX,66666.host),(DOMAIN-SUFFIX,666666.host),(DOMAIN-SUFFIX,ipip.net),(DOMAIN-SUFFIX,ipw.cn),(DOMAIN-SUFFIX,ddnspod.com),(DOMAIN-KEYWORD,test-ipv6),(DOMAIN,ip.3322.net))
   - OR,((DOMAIN-SUFFIX,cdn-apple.com),(DOMAIN-KEYWORD,aria2),(DOMAIN-KEYWORD,thunder),(DOMAIN-KEYWORD,xlliveud),(DOMAIN-KEYWORD,xunlei),(DOMAIN-KEYWORD,yunpan))
