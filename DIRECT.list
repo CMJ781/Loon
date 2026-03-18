@@ -25,6 +25,10 @@ PROCESS-NAME,devcon.exe
 PROCESS-NAME,DriverInstaller.exe
 PROCESS-NAME,CrashReport.exe
 PROCESS-NAME,SunloginClient.exe
+DOMAIN-SUFFIX,asklink.com
+DOMAIN-SUFFIX,oray.net
+DOMAIN-SUFFIX,oray.com
+DOMAIN-SUFFIX,oray.cn
 
 DOMAIN,dfzq.con.cn
 DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
