@@ -17,6 +17,9 @@ DOMAIN-SUFFIX,cn.store.ui.com
 DOMAIN-SUFFIX,ui.com
 DOMAIN-SUFFIX,ubnt.com
 
+# MICU Cloud Media Emby - 海外线
+DOMAIN,media.micu.hk
+
 #  华文电视
 USER-AGENT,HWTVMobile*
 DOMAIN-SUFFIX,5itv.tv
