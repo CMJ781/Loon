@@ -38,6 +38,11 @@ DOMAIN-SUFFIX,aqara.com
 DOMAIN,api.wifiman.com
 DOMAIN,geoip.ubnt.com
 
+
+# MICU Cloud Media Emby - 国内直连
+DOMAIN,tv.micu.hk
+DOMAIN,tv1.micu.hk
+
 # 抖音修改IP
 DOMAIN-SUFFIX,amemv.com
 DOMAIN-SUFFIX,douyinvod.com
