@@ -12,6 +12,7 @@ payload:
   - DOMAIN-SUFFIX,cn.store.ui.com
   - DOMAIN-SUFFIX,ui.com
   - DOMAIN-SUFFIX,ubnt.com
+  - DOMAIN,media.micu.hk
   - USER-AGENT,HWTVMobile*
   - DOMAIN-SUFFIX,5itv.tv
   - DOMAIN-SUFFIX,ocnttv.com
