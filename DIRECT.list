@@ -103,8 +103,9 @@ DOMAIN-SUFFIX,airchina.com
 DOMAIN-SUFFIX,wifi.airchina.com
 DOMAIN-SUFFIX,file.myqcloud.com
 
-# 佩奇订阅
+# 佩奇等订阅
 DOMAIN-SUFFIX,drrmjd.lol
+DOMAIN-SUFFIX,5bx6h.net
 
 DOMAIN-KEYWORD,h-world
 DOMAIN-KEYWORD,hantinghotels
