@@ -32,6 +32,8 @@ payload:
   - USER-AGENT,Infuse*
   - IP-CIDR,45.116.152.0/22,no-resolve
   - DOMAIN-SUFFIX,dandanplay.net
+  - DOMAIN-SUFFIX,trakt.tv
+  - DOMAIN-SUFFIX,tmdb.org
   - DOMAIN-KEYWORD,javday
   - DOMAIN-SUFFIX,pornhub.com
   - DOMAIN-SUFFIX,phncdn.com
