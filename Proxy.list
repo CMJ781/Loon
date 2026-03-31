@@ -40,6 +40,9 @@ IP-CIDR,45.116.152.0/22,no-resolve
 # Forward 模块
 # danmu
 DOMAIN-SUFFIX,dandanplay.net
+DOMAIN-SUFFIX,trakt.tv
+DOMAIN-SUFFIX,tmdb.org
+
 # porn系列模块
 DOMAIN-KEYWORD,javday
 DOMAIN-SUFFIX,pornhub.com
