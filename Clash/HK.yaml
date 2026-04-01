@@ -33,3 +33,7 @@ payload:
   - DOMAIN-SUFFIX,imgur.com
   - DOMAIN-SUFFIX,origin-a.akamaihd.net
   - DOMAIN-SUFFIX,v2ex.com
+  - DOMAIN-SUFFIX,m-team.cc
+  - DOMAIN-SUFFIX,m-team.io
+  - DOMAIN-SUFFIX,m-team.co
+  - DOMAIN-KEYWORD,m-team
