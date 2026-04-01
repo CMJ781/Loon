@@ -2,4 +2,6 @@ payload:
   - DOMAIN-SUFFIX,fancl.co.jp
   - DOMAIN-SUFFIX,waqi.info
   - DOMAIN-SUFFIX,chinadigitaltimes.net
+  - DOMAIN-SUFFIX,m-team.cc
+  - DOMAIN-SUFFIX,m-team.io
   - DOMAIN-KEYWORD,m-team
