@@ -4,3 +4,6 @@ DOMAIN-SUFFIX,waqi.info
 
 # 数字中国
 DOMAIN-SUFFIX,chinadigitaltimes.net
+
+# M-team
+DOMAIN-KEYWORD,m-team
