@@ -59,3 +59,9 @@ DOMAIN-SUFFIX,imgur.com
 # 零星规则补充
 DOMAIN-SUFFIX,origin-a.akamaihd.net
 DOMAIN-SUFFIX,v2ex.com
+
+# M-team
+DOMAIN-SUFFIX,m-team.cc
+DOMAIN-SUFFIX,m-team.io
+DOMAIN-SUFFIX,m-team.co
+DOMAIN-KEYWORD,m-team
