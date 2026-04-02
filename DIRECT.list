@@ -13,9 +13,6 @@ OR,((PROCESS-NAME,BitComet),(PROCESS-NAME,DownloadService),(PROCESS-NAME,Downie*
 # 远程控制直连规则
 OR,((DOMAIN-SUFFIX,asklink.com),(DOMAIN-SUFFIX,todesk.com),(DOMAIN-SUFFIX,todesk.net),(DOMAIN-SUFFIX,todesk.cn))
 
-# 墨鱼
-DOMAIN-SUFFIX,ddgksf2013.top
-
 #Windows-ToDesk
 PROCESS-NAME,ToDesk_Setup.exe
 PROCESS-NAME,ToDesk_Session.exe
