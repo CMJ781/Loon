@@ -4,6 +4,7 @@ payload:
   - OR,((DOMAIN-SUFFIX,cdn-apple.com),(DOMAIN-KEYWORD,aria2),(DOMAIN-KEYWORD,thunder),(DOMAIN-KEYWORD,xlliveud),(DOMAIN-KEYWORD,xunlei),(DOMAIN-KEYWORD,yunpan))
   - OR,((PROCESS-NAME,BitComet),(PROCESS-NAME,DownloadService),(PROCESS-NAME,Downie*),(PROCESS-NAME,Folx),(PROCESS-NAME,NetTransport),(PROCESS-NAME,Thunder),(PROCESS-NAME,Transmission),(PROCESS-NAME,WebTorrent),(PROCESS-NAME,WebTorrentHelper), (PROCESS-NAME,Weiyun),(PROCESS-NAME,aria2c),(PROCESS-NAME,fdm),(PROCESS-NAME,qbittorrent),(PROCESS-NAME,uTorrent))
   - OR,((DOMAIN-SUFFIX,asklink.com),(DOMAIN-SUFFIX,todesk.com),(DOMAIN-SUFFIX,todesk.net),(DOMAIN-SUFFIX,todesk.cn))
+  - DOMAIN-SUFFIX,ddgksf2013.top
   - PROCESS-NAME,ToDesk_Setup.exe
   - PROCESS-NAME,ToDesk_Session.exe
   - PROCESS-NAME,ToDesk_Service.exe
