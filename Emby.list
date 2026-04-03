@@ -24,3 +24,6 @@ DOMAIN-SUFFIX,cdn.lightting.top
 
 # ENET的Emby
 DOMAIN-SUFFIX,video.easyemby.com
+
+# Cloudflare的Emby反代
+DOMAIN-SUFFIX,fdemby.cmj781.com
