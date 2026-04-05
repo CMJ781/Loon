@@ -1,29 +1,29 @@
 # Emby 服务器地址  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
 # Emby服务器地址
 # 叶子Emby
-DOMAIN-SUFFIX,bzy.lyezi.xyz
-DOMAIN-SUFFIX,zy.lyezi.xyz
+DOMAIN-SUFFIX,lyezi.xyz
 
 # 明天倒闭EMBY
-DOMAIN-SUFFIX,cdn.jiedaibao.gs
-DOMAIN-SUFFIX,cdn2.jiedaibao.gs
-DOMAIN-SUFFIX,db2.jiedaibao.gs
-DOMAIN-SUFFIX,db.jiedaibao.gs
+DOMAIN-SUFFIX,jiedaibao.gs
 
 # 蘑菇Emby
-DOMAIN-SUFFIX,mmm.coouu.cn
+DOMAIN-SUFFIX,coouu.cn
 
 # MICU的Emby
-DOMAIN-SUFFIX,media.micu.hk
-DOMAIN-SUFFIX,tv.micu.hk
-DOMAIN-SUFFIX,tv1.micu.hk
+DOMAIN-SUFFIX,micu.hk
 
 # 拾光Emby
-DOMAIN-SUFFIX,ey.lightting.net
-DOMAIN-SUFFIX,cdn.lightting.top
+DOMAIN-SUFFIX,lightting.net
+DOMAIN-SUFFIX,lightting.top
 
 # ENET的Emby
-DOMAIN-SUFFIX,video.easyemby.com
+DOMAIN-SUFFIX,easyemby.com
+
+# 墨云阁Emby
+DOMAIN-SUFFIX,mobaiemby.site
+IP-CIDR,209.33.172.84/32,no-resolve
+IP-CIDR,185.148.13.76/32,no-resolve
+IP-CIDR,45.143.131.228/32,no-resolve
 
 # Cloudflare的Emby反代
 DOMAIN-SUFFIX,fdemby.cmj781.com
