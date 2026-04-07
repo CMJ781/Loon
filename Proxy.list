@@ -37,6 +37,9 @@ USER-AGENT,Infuse*
 
 IP-CIDR,45.116.152.0/22,no-resolve
 
+# 零星规则补充
+DOMAIN-SUFFIX,v2ex.com
+
 # Forward 模块
 # danmu
 DOMAIN-SUFFIX,dandanplay.net
