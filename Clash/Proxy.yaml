@@ -31,6 +31,7 @@ payload:
   - USER-AGENT,MKPlayer*
   - USER-AGENT,Infuse*
   - IP-CIDR,45.116.152.0/22,no-resolve
+  - DOMAIN-SUFFIX,v2ex.com
   - DOMAIN-SUFFIX,dandanplay.net
   - DOMAIN-SUFFIX,trakt.tv
   - DOMAIN-SUFFIX,tmdb.org
