@@ -9,6 +9,8 @@ payload:
   - PROCESS-NAME,ToDesk_Service.exe
   - PROCESS-NAME,ToDesk.exe
   - DOMAIN-KEYWORD,todesk
+  - DOMAIN-SUFFIX,ctm.net
+  - DOMAIN-KEYWORD,ctm
   - PROCESS-NAME,devcon.exe
   - PROCESS-NAME,DriverInstaller.exe
   - PROCESS-NAME,CrashReport.exe
