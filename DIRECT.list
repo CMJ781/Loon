@@ -20,6 +20,10 @@ PROCESS-NAME,ToDesk_Service.exe
 PROCESS-NAME,ToDesk.exe
 DOMAIN-KEYWORD,todesk
 
+# 澳门电讯CTM
+DOMAIN-SUFFIX,ctm.net
+DOMAIN-KEYWORD,ctm
+
 #Windows-Oray
 PROCESS-NAME,devcon.exe
 PROCESS-NAME,DriverInstaller.exe
