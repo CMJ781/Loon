@@ -2,9 +2,12 @@
 #!desc=kelee.one重定向
 
 [Header Rewrite]
-http-response https:\/\/kelee\.one(\/.*)? header-add content-disposition inline
-http-response https:\/\/kelee\.one(\/.*)? header-replace content-type "text/plain; charset=utf-8"
-http-request https:\/\/kelee\.one(\/.*)? header-replace User-Agent "Surge iOS/3367"
+# 匹配 kelee.one 及其所有子域名 (如 hub.kelee.one)
+# 使用 ^https?:\/\/.*kelee\.one 确保覆盖所有相关二级域名
+http-response ^https?:\/\/.*kelee\.one header-add Content-Disposition "inline"
+http-response ^https?:\/\/.*kelee\.one header-replace Content-Type "text/plain; charset=utf-8"
+http-request ^https?:\/\/.*kelee\.one header-replace User-Agent "Surge iOS/3367"
 
 [MITM]
-hostname = %APPEND% kelee.one
+# 必须使用通配符覆盖子域名，否则无法解密 hub.kelee.one 的流量
+hostname = %APPEND% *.kelee.one, kelee.one
