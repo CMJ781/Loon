@@ -14,6 +14,8 @@ payload:
   - DOMAIN-SUFFIX,velo.helpshift.com
   - DOMAIN-SUFFIX,cubox.cc
   - DOMAIN-SUFFIX,getupnote.com
+  - DOMAIN-SUFFIX,neat-reader.com
+  - DOMAIN-KEYWORD,neat-reader
   - IP-CIDR,208.54.0.0/16,no-resolve
   - DOMAIN,ns.sipgeo.t-mobile.com
   - DOMAIN,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
