@@ -48,10 +48,6 @@ DOMAIN-SUFFIX,dandanplay.net
 DOMAIN-SUFFIX,trakt.tv
 DOMAIN-SUFFIX,tmdb.org
 
-# NeatReader
-DOMAIN-SUFFIX,neat-reader.com
-DOMAIN-KEYWORD,neat-reader
-
 # porn系列模块
 DOMAIN-KEYWORD,javday
 DOMAIN-SUFFIX,pornhub.com
