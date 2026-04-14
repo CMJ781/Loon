@@ -36,8 +36,6 @@ payload:
   - DOMAIN-SUFFIX,dandanplay.net
   - DOMAIN-SUFFIX,trakt.tv
   - DOMAIN-SUFFIX,tmdb.org
-  - DOMAIN-SUFFIX,neat-reader.com
-  - DOMAIN-KEYWORD,neat-reader
   - DOMAIN-KEYWORD,javday
   - DOMAIN-SUFFIX,pornhub.com
   - DOMAIN-SUFFIX,phncdn.com
