@@ -6,12 +6,6 @@ payload:
   - DOMAIN-SUFFIX,trusteer.com
   - DOMAIN-SUFFIX,aritzia.com
   - DOMAIN-SUFFIX,linear.tv.apple.com
-  - USER-AGENT,velo*
-  - DOMAIN-KEYWORD,velobank
-  - DOMAIN-KEYWORD,eastwestbank
-  - DOMAIN-SUFFIX,omtrdc.net
-  - DOMAIN-SUFFIX,assureid.net
-  - DOMAIN-SUFFIX,velo.helpshift.com
   - DOMAIN-SUFFIX,cubox.cc
   - DOMAIN-SUFFIX,getupnote.com
   - DOMAIN-SUFFIX,neat-reader.com
@@ -21,6 +15,9 @@ payload:
   - DOMAIN,ss.epdg.epc.mnc260.mcc310.pub.3gppnetwork.org
   - DOMAIN,tmobilees.mpeasylink.com
   - DOMAIN-KEYWORD,voice
+  - IP-CIDR,216.239.36.145/32,no-resolve
+  - DOMAIN,voice.telephony.goog
+  - DOMAIN-KEYWORD,voice.telephon
   - DOMAIN,alt1-mtalk.google.com
   - DOMAIN,alt2-mtalk.google.com
   - DOMAIN,alt3-mtalk.google.com
