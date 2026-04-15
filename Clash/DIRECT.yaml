@@ -11,6 +11,12 @@ payload:
   - DOMAIN-KEYWORD,todesk
   - DOMAIN-SUFFIX,ctm.net
   - DOMAIN-KEYWORD,ctm
+  - USER-AGENT,velo*
+  - DOMAIN-KEYWORD,velobank
+  - DOMAIN-KEYWORD,eastwestbank
+  - DOMAIN-SUFFIX,omtrdc.net
+  - DOMAIN-SUFFIX,assureid.net
+  - DOMAIN-SUFFIX,velo.helpshift.com
   - PROCESS-NAME,devcon.exe
   - PROCESS-NAME,DriverInstaller.exe
   - PROCESS-NAME,CrashReport.exe
