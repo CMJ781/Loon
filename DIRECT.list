@@ -24,6 +24,14 @@ DOMAIN-KEYWORD,todesk
 DOMAIN-SUFFIX,ctm.net
 DOMAIN-KEYWORD,ctm
 
+# velo bank
+USER-AGENT,velo*
+DOMAIN-KEYWORD,velobank
+DOMAIN-KEYWORD,eastwestbank
+DOMAIN-SUFFIX,omtrdc.net
+DOMAIN-SUFFIX,assureid.net
+DOMAIN-SUFFIX,velo.helpshift.com
+
 #Windows-Oray
 PROCESS-NAME,devcon.exe
 PROCESS-NAME,DriverInstaller.exe
