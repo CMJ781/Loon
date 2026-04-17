@@ -1,3 +1,7 @@
 payload:
   - DOMAIN-SUFFIX,amazon.sg
   - DOMAIN-SUFFIX,hsbc.com.sg
+  - DOMAIN-SUFFIX,dssedge.com
+  - DOMAIN-KEYWORD,z-library
+  - DOMAIN-KEYWORD,z-lib
+  - DOMAIN-KEYWORD,zlib
