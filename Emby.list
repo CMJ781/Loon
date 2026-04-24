@@ -30,3 +30,12 @@ DOMAIN-SUFFIX,drama666.top
 
 # Cloudflare的Emby反代
 DOMAIN-SUFFIX,fdemby.cmj781.com
+
+# Forward 社区
+DOMAIN,tmdbimage.vvebo.vip
+DOMAIN,forwardinfo.vvebo.vip
+DOMAIN-SUFFIX,vvebo.vip
+
+#  The Intro Database (TIDB)
+DOMAIN-SUFFIX,theintrodb.org
+DOMAIN-SUFFIX,tmdb.org
