@@ -25,5 +25,8 @@ IP-CIDR,209.33.172.84/32,no-resolve
 IP-CIDR,185.148.13.76/32,no-resolve
 IP-CIDR,45.143.131.228/32,no-resolve
 
+# Drama 无脑短剧
+DOMAIN-SUFFIX,drama666.top
+
 # Cloudflare的Emby反代
 DOMAIN-SUFFIX,fdemby.cmj781.com
