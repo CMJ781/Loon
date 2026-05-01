@@ -26,10 +26,12 @@ payload:
   - DOMAIN,cm.steampowered.com
   - DOMAIN-SUFFIX,qbittorrent.org
   - DOMAIN,csl.prod.ondemandconnectivity.com
-  - DOMAIN,hhk.prod.ondemandconnectivity.com
   - DOMAIN,epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
   - DOMAIN,ss.epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
   - DOMAIN,ss.epdg.epc.geo.mnc000.mcc454.pub.3gppnetwork.org
   - DOMAIN-SUFFIX,three.com.hk
-  - DOMAIN-SUFFIX,mnc003.mcc454.pub.3gppnetwork.org
+  - DOMAIN,hhk.prod.ondemandconnectivity.com
+  - DOMAIN,epdg.epc.mnc003.mcc454.pub.3gppnetwork.org
+  - DOMAIN,ss.epdg.epc.mnc003.mcc454.pub.3gppnetwork.org
+  - DOMAIN,ss.epdg.epc.geo.mnc003.mcc454.pub.3gppnetwork.org
   - DOMAIN-SUFFIX,origin-a.akamaihd.net
