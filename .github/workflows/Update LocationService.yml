@@ -20,7 +20,7 @@ jobs:
         curl -L -o iRingo.LocationService.sgmodule "https://github.com/NSRingo/LocationService/releases/latest/download/iRingo.LocationService.sgmodule"
         
         # 替换 GeoCountryCode
-        sed -i 's/GeoCountryCode:"US"/GeoCountryCode:"SG"/g' iRingo.LocationService.sgmodule
+        sed -i 's/GeoCountryCode:"US"/GeoCountryCode:"HK"/g' iRingo.LocationService.sgmodule
         
     - name: Commit and push changes
       run: |
