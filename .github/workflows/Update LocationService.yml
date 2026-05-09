@@ -2,46 +2,39 @@ name: Auto Update LocationService
 
 on:
   schedule:
-    # 每 24 小时运行一次 (UTC 时间 0:00，对应北京时间 8:00)
+    # 每 24 小时运行一次
     - cron: '0 0 * * *'
-  workflow_dispatch:  # 允许手动触发
-
-# 全局环境变量，确保所有步骤都使用最新的 Node.js 运行时运行 Action
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  workflow_dispatch: 
 
 jobs:
   update-module:
     runs-on: ubuntu-latest
     
+    # 注意：升级到 v5 后，FORCE_JAVASCRIPT_ACTIONS_TO_NODE24 变量可以移除
+    # 除非你还在使用其他尚未更新的老旧第三方 Action
+    
     steps:
     - name: Checkout repository
-      # 虽然使用了 v4，但上方的 env 会强制其在 Node.js 24 下运行，从而消除警告
-      uses: actions/checkout@v4
+      # 将 v4 升级为 v5，直接从底层解决 Node 版本不匹配问题
+      uses: actions/checkout@v5
       
     - name: Download and modify module
       run: |
-        # 1. 下载最新的 Surge 模块文件
+        # 下载最新的模块文件
         curl -L -o iRingo.LocationService.sgmodule "https://github.com/NSRingo/LocationService/releases/latest/download/iRingo.LocationService.sgmodule"
         
-        # 2. 将地理位置代码从 US 修改为 HK
-        # 使用 sed 直接在文件中进行流编辑
+        # 替换 GeoCountryCode
         sed -i 's/GeoCountryCode:"US"/GeoCountryCode:"HK"/g' iRingo.LocationService.sgmodule
         
     - name: Commit and push changes
       run: |
-        # 配置 Git 机器人信息
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        
-        # 暂存修改后的模块文件
         git add iRingo.LocationService.sgmodule
         
-        # 检查文件是否有实际内容变动
         if git diff --staged --quiet; then
-          echo "No更改检测到，跳过提交。"
+          echo "No changes detected"
         else
-          # 提交并推送到仓库，包含时间戳便于追溯
           git commit -m "chore: auto update iRingo.LocationService.sgmodule [$(date +'%Y-%m-%d %H:%M')]"
           git push
         fi
