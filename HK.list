@@ -52,12 +52,31 @@ DOMAIN,epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.mnc000.mcc454.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.geo.mnc000.mcc454.pub.3gppnetwork.org
 
-# 3HK  sim 通过 iCloud 走 Wi-Fi Calling，同时关闭“设置-隐私与安全性-定位服务-系统服务-Wi-Fi 通话”定位权限
+# 3HK sim 通过 iCloud 走 Wi-Fi Calling，同时关闭“设置-隐私与安全性-定位服务-系统服务-Wi-Fi 通话”定位权限
 DOMAIN-SUFFIX,three.com.hk
 DOMAIN,hhk.prod.ondemandconnectivity.com
 DOMAIN,epdg.epc.mnc003.mcc454.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.mnc003.mcc454.pub.3gppnetwork.org
 DOMAIN,ss.epdg.epc.geo.mnc003.mcc454.pub.3gppnetwork.org
+IP-CIDR,103.112.0.0/16,no-resolve
+
+# 香港联通 sim 通过 iCloud 走 Wi-Fi Calling，同时关闭“设置-隐私与安全性-定位服务-系统服务-Wi-Fi 通话”定位权限
+DOMAIN-SUFFIX,cuhk.com
+DOMAIN-SUFFIX,unicomhk.com
+DOMAIN,epdg.epc.mnc007.mcc454.pub.3gppnetwork.org
+DOMAIN,ss.epdg.epc.mnc007.mcc454.pub.3gppnetwork.org
+DOMAIN,ss.epdg.epc.geo.mnc007.mcc454.pub.3gppnetwork.org
+IP-CIDR,203.160.64.0/18,no-resolve
+IP-CIDR,103.66.172.0/22,no-resolve
+
+# 中国移动香港 sim 通过 iCloud 走 Wi-Fi Calling，同时关闭“设置-隐私与安全性-定位服务-系统服务-Wi-Fi 通话”定位权限
+DOMAIN-SUFFIX,hk.chinamobile.com
+DOMAIN,epdg.epc.mnc012.mcc454.pub.3gppnetwork.org
+DOMAIN,ss.epdg.epc.mnc012.mcc454.pub.3gppnetwork.org
+DOMAIN,ss.epdg.epc.geo.mnc012.mcc454.pub.3gppnetwork.org
+IP-CIDR,182.239.64.0/18,no-resolve
+IP-CIDR,117.18.252.0/22,no-resolve
+IP-CIDR,203.142.96.0/19,no-resolve
 
 # 零星规则补充
 DOMAIN-SUFFIX,origin-a.akamaihd.net
