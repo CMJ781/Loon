@@ -34,4 +34,19 @@ payload:
   - DOMAIN,epdg.epc.mnc003.mcc454.pub.3gppnetwork.org
   - DOMAIN,ss.epdg.epc.mnc003.mcc454.pub.3gppnetwork.org
   - DOMAIN,ss.epdg.epc.geo.mnc003.mcc454.pub.3gppnetwork.org
+  - IP-CIDR,103.112.0.0/16,no-resolve
+  - DOMAIN-SUFFIX,cuhk.com
+  - DOMAIN-SUFFIX,unicomhk.com
+  - DOMAIN,epdg.epc.mnc007.mcc454.pub.3gppnetwork.org
+  - DOMAIN,ss.epdg.epc.mnc007.mcc454.pub.3gppnetwork.org
+  - DOMAIN,ss.epdg.epc.geo.mnc007.mcc454.pub.3gppnetwork.org
+  - IP-CIDR,203.160.64.0/18,no-resolve
+  - IP-CIDR,103.66.172.0/22,no-resolve
+  - DOMAIN-SUFFIX,hk.chinamobile.com
+  - DOMAIN,epdg.epc.mnc012.mcc454.pub.3gppnetwork.org
+  - DOMAIN,ss.epdg.epc.mnc012.mcc454.pub.3gppnetwork.org
+  - DOMAIN,ss.epdg.epc.geo.mnc012.mcc454.pub.3gppnetwork.org
+  - IP-CIDR,182.239.64.0/18,no-resolve
+  - IP-CIDR,117.18.252.0/22,no-resolve
+  - IP-CIDR,203.142.96.0/19,no-resolve
   - DOMAIN-SUFFIX,origin-a.akamaihd.net
