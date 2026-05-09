@@ -9,9 +9,14 @@ on:
 jobs:
   update-module:
     runs-on: ubuntu-latest
+    # 添加以下 env 配置即可消除 Node.js 20 弃用警告
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     
     steps:
     - name: Checkout repository
+      # 官方 checkout action v4 之后通常会发布新版以原生支持 Node 24
+      # 你可以关注 actions/checkout 是否发布了 v5，届时直接替换版本号效果更佳
       uses: actions/checkout@v4
       
     - name: Download and modify module
@@ -19,7 +24,7 @@ jobs:
         # 下载最新的模块文件
         curl -L -o iRingo.LocationService.sgmodule "https://github.com/NSRingo/LocationService/releases/latest/download/iRingo.LocationService.sgmodule"
         
-        # 替换 GeoCountryCode
+        # 替换 GeoCountryCode 为目标区域
         sed -i 's/GeoCountryCode:"US"/GeoCountryCode:"HK"/g' iRingo.LocationService.sgmodule
         
     - name: Commit and push changes
