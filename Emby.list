@@ -8,12 +8,16 @@ DOMAIN-SUFFIX,jiedaibao.gs
 
 # 蘑菇Emby
 DOMAIN-SUFFIX,coouu.cn
+DOMAIN,mm.iposl.com
 
 # MICU的Emby
-DOMAIN-SUFFIX,micu.hk
+DOMAIN,media.micu.hk
+DOMAIN,media1.micu.hk
+DOMAIN,media2.micu.hk
+DOMAIN,media3.micu.hk
 
 # 拾光Emby
-DOMAIN-SUFFIX,lightting.net
+DOMAIN,ey.lightting.net
 DOMAIN-SUFFIX,lightting.top
 
 # ENET的Emby
@@ -21,12 +25,12 @@ DOMAIN-SUFFIX,easyemby.com
 
 # 墨云阁Emby
 DOMAIN-SUFFIX,mobaiemby.site
+DOMAIN,m.20269909.xy
 IP-CIDR,209.33.172.84/32,no-resolve
-IP-CIDR,185.148.13.76/32,no-resolve
 IP-CIDR,45.143.131.228/32,no-resolve
 
 # Drama 无脑短剧
-DOMAIN-SUFFIX,drama666.top
+DOMAIN,a.drama666.top
 
 # Cloudflare的Emby反代
 DOMAIN-SUFFIX,fdemby.cmj781.com
