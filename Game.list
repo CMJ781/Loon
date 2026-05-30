@@ -1,0 +1,5 @@
+# Game 补充   //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
+DOMAIN-SUFFIX,poxel.io
+DOMAIN,poxel.io
+
+DOMAIN-SUFFIX,poxel.iocrazygames.com
