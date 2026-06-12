@@ -5,6 +5,7 @@ payload:
   - DOMAIN-SUFFIX,omtrdc.net
   - DOMAIN-SUFFIX,trusteer.com
   - DOMAIN-SUFFIX,aritzia.com
+  - DOMAIN-SUFFIX,ttwstatic.com
   - DOMAIN-SUFFIX,linear.tv.apple.com
   - DOMAIN-SUFFIX,cubox.cc
   - DOMAIN-SUFFIX,getupnote.com
