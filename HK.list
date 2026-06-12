@@ -86,7 +86,7 @@ IP-CIDR,203.142.96.0/19,no-resolve
 # 零星规则补充
 DOMAIN-SUFFIX,origin-a.akamaihd.net
 
-富途牛牛
+# 富途牛牛
 DOMAIN-SUFFIX,futuhk.com
 DOMAIN-SUFFIX,futu.link
 DOMAIN-SUFFIX,futunn.com
@@ -171,7 +171,7 @@ IP-CIDR,43.132.106.8/32,no-resolve
 IP-CIDR,43.132.138.67/32,no-resolve
 IP-CIDR,1.15.158.235/32,no-resolve
 
-#长桥
+# 长桥
 DOMAIN-SUFFIX,api.lbkrs.com
 DOMAIN-SUFFIX,api-gl.lbkrs.com
 
