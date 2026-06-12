@@ -5,6 +5,7 @@ DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,omtrdc.net
 DOMAIN-SUFFIX,trusteer.com
 DOMAIN-SUFFIX,aritzia.com
+DOMAIN-SUFFIX,ttwstatic.com
 
 # Apple TV 的 F1 直播
 DOMAIN-SUFFIX,linear.tv.apple.com
