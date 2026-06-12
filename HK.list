@@ -111,11 +111,10 @@ DOMAIN-SUFFIX,futuholdings.com
 DOMAIN-SUFFIX,futuesop.com
 DOMAIN-SUFFIX,futubull.cn
 DOMAIN-SUFFIX,futuchain.com
-DOMAIN-SUFFIX,9oju31.launches.appsflyersdk.com
+DOMAIN-SUFFIX,launches.appsflyersdk.com
 DOMAIN-SUFFIX,shortconn.im.qcloud.com
 DOMAIN-SUFFIX,cdn.futustatic.com
 DOMAIN-SUFFIX,api.moomoobull.com
-DOMAIN-SUFFIX,sgqt0j.launches.appsflyersdk.com
 
 IP-CIDR,1.14.242.0/23,no-resolve
 IP-CIDR,14.152.91.0/24,no-resolve
@@ -174,4 +173,3 @@ IP-CIDR,1.15.158.235/32,no-resolve
 # 长桥
 DOMAIN-SUFFIX,api.lbkrs.com
 DOMAIN-SUFFIX,api-gl.lbkrs.com
-
