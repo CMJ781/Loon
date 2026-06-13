@@ -26,6 +26,7 @@ payload:
   - DOMAIN-SUFFIX,software.charliemonroe.net
   - DOMAIN-SUFFIX,bitwarden.com
   - DOMAIN-SUFFIX,hibitsoft.ir
+  - DOMAIN-SUFFIX,live.com
   - DOMAIN-KEYWORD,mp43
   - USER-AGENT,bose*
   - USER-AGENT,MKPlayer*
