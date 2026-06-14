@@ -43,12 +43,24 @@ DOMAIN-KEYWORD,lbkrs
 DOMAIN-SUFFIX,futu.cn
 DOMAIN-SUFFIX,futu.com
 DOMAIN-SUFFIX,futu.link
+DOMAIN-SUFFIX,futu0.com
+DOMAIN-SUFFIX,futu1.com
+DOMAIN-SUFFIX,futu2.com
+DOMAIN-SUFFIX,futu3.com
+DOMAIN-SUFFIX,futu4.com
+DOMAIN-SUFFIX,futu5.com
+DOMAIN-SUFFIX,futu6.com
+DOMAIN-SUFFIX,futu7.com
+DOMAIN-SUFFIX,futu8.com
+DOMAIN-SUFFIX,futu9.com
 DOMAIN-SUFFIX,futuapi.com
 DOMAIN-SUFFIX,futubull.cn
 DOMAIN-SUFFIX,futuchain.com
 DOMAIN-SUFFIX,futuesop.com
 DOMAIN-SUFFIX,futufin.com
 DOMAIN-SUFFIX,futuhk.com
+DOMAIN-SUFFIX,futuhk1.com
+DOMAIN-SUFFIX,futuhk2.com
 DOMAIN-SUFFIX,futuhn.com
 DOMAIN-SUFFIX,futuholdings.com
 DOMAIN-SUFFIX,futuhongkong.com
@@ -60,10 +72,6 @@ DOMAIN-SUFFIX,futustatic.com
 DOMAIN-SUFFIX,fututrade.com
 DOMAIN-SUFFIX,moomoo.com
 DOMAIN-SUFFIX,moomoo.io
-
-# >>> Surge 正则表达式：合并数字型备用域名（+号支持两位数及以上）(在SurgePro.conf中配置)
-# DOMAIN-REGEX,^futu[0-9]+\.com$
-# DOMAIN-REGEX,^futuhk[1-2]\.com$
 
 # >>> 富途底层依赖的第三方服务
 DOMAIN-SUFFIX,launches.appsflyersdk.com
