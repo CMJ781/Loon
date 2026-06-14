@@ -61,9 +61,9 @@ DOMAIN-SUFFIX,fututrade.com
 DOMAIN-SUFFIX,moomoo.com
 DOMAIN-SUFFIX,moomoo.io
 
-# >>> Surge 正则表达式：合并数字型备用域名（+号支持两位数及以上）
-DOMAIN-REGEX,^futu[0-9]+\.com$
-DOMAIN-REGEX,^futuhk[1-2]\.com$
+# >>> Surge 正则表达式：合并数字型备用域名（+号支持两位数及以上）(在SurgePro.conf中配置)
+# DOMAIN-REGEX,^futu[0-9]+\.com$
+# DOMAIN-REGEX,^futuhk[1-2]\.com$
 
 # >>> 富途底层依赖的第三方服务
 DOMAIN-SUFFIX,launches.appsflyersdk.com
