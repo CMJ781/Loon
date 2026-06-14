@@ -1,10 +1,12 @@
 # >>> //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
 
 # 以下为海外证券规则
-# ==========================================
-# 1. 老虎证券 (Tiger Brokers) - 2026 最新补充版
-# ==========================================
+# >>> 海外主流证券分流规则集 (老虎 / 长桥 / 富途)
+# 更新时间: 2026-06-14
 
+# ==========================================
+# 1. 老虎证券 (Tiger Brokers)
+# ==========================================
 # >>> 域名后缀匹配
 DOMAIN-SUFFIX,itiger.com
 DOMAIN-SUFFIX,tigerbrokers.com
@@ -19,11 +21,9 @@ DOMAIN-KEYWORD,tradeup
 
 
 # ==========================================
-# 2. 长桥证券 (Longbridge) - 2026 最新补充版
+# 2. 长桥证券 (Longbridge)
 # ==========================================
-
-# >>> 域名后缀匹配
-DOMAIN-SUFFIX,api-status.longbridgeapp.com
+# >>> 域名后缀匹配 (已剔除被主域名包含的冗余子域名)
 DOMAIN-SUFFIX,api.lbkrs.com
 DOMAIN-SUFFIX,api-gl.lbkrs.com
 DOMAIN-SUFFIX,longbridge.cloud
@@ -39,31 +39,16 @@ DOMAIN-KEYWORD,lbkrs
 # ==========================================
 # 3. 富途证券 / 富途牛牛 (Futu / Moomoo)
 # ==========================================
-
 # >>> 域名后缀匹配
-DOMAIN-SUFFIX,api.moomoobull.com
-DOMAIN-SUFFIX,cdn.futustatic.com
 DOMAIN-SUFFIX,futu.cn
 DOMAIN-SUFFIX,futu.com
 DOMAIN-SUFFIX,futu.link
-DOMAIN-SUFFIX,futu0.com
-DOMAIN-SUFFIX,futu1.com
-DOMAIN-SUFFIX,futu2.com
-DOMAIN-SUFFIX,futu3.com
-DOMAIN-SUFFIX,futu4.com
-DOMAIN-SUFFIX,futu5.com
-DOMAIN-SUFFIX,futu6.com
-DOMAIN-SUFFIX,futu7.com
-DOMAIN-SUFFIX,futu8.com
-DOMAIN-SUFFIX,futu9.com
 DOMAIN-SUFFIX,futuapi.com
 DOMAIN-SUFFIX,futubull.cn
 DOMAIN-SUFFIX,futuchain.com
 DOMAIN-SUFFIX,futuesop.com
 DOMAIN-SUFFIX,futufin.com
 DOMAIN-SUFFIX,futuhk.com
-DOMAIN-SUFFIX,futuhk1.com
-DOMAIN-SUFFIX,futuhk2.com
 DOMAIN-SUFFIX,futuhn.com
 DOMAIN-SUFFIX,futuholdings.com
 DOMAIN-SUFFIX,futuhongkong.com
@@ -73,24 +58,25 @@ DOMAIN-SUFFIX,futuniuniu.com
 DOMAIN-SUFFIX,futunn.com
 DOMAIN-SUFFIX,futustatic.com
 DOMAIN-SUFFIX,fututrade.com
-DOMAIN-SUFFIX,launches.appsflyersdk.com
 DOMAIN-SUFFIX,moomoo.com
 DOMAIN-SUFFIX,moomoo.io
+
+# >>> Surge 正则表达式：合并数字型备用域名（+号支持两位数及以上）
+DOMAIN-REGEX,^futu[0-9]+\.com$
+DOMAIN-REGEX,^futuhk[1-2]\.com$
+
+# >>> 富途底层依赖的第三方服务
+DOMAIN-SUFFIX,launches.appsflyersdk.com
 DOMAIN-SUFFIX,qtlcdn.com
 DOMAIN-SUFFIX,shortconn.im.qcloud.com
 
-
-# >>> IP地址匹配 (全部强制启用 no-resolve)
-# IP-CIDR,1.12.0.0/14,no-resolve
+# >>> IP地址匹配 (全部启用 no-resolve)
 IP-CIDR,1.14.242.0/23,no-resolve
 IP-CIDR,1.15.158.235/32,no-resolve
-# IP-CIDR,14.152.0.0/16,no-resolve
 IP-CIDR,14.152.91.0/24,no-resolve
 IP-CIDR,38.65.217.0/24,no-resolve
-# IP-CIDR,42.192.0.0/14,no-resolve
 IP-CIDR,42.193.128.0/24,no-resolve
 IP-CIDR,42.194.152.250/32,no-resolve
-# IP-CIDR,43.128.0.0/11,no-resolve
 IP-CIDR,43.130.30.0/24,no-resolve
 IP-CIDR,43.130.170.0/24,no-resolve
 IP-CIDR,43.132.106.6/32,no-resolve
@@ -109,51 +95,31 @@ IP-CIDR,43.153.234.107/32,no-resolve
 IP-CIDR,43.153.249.33/32,no-resolve
 IP-CIDR,43.160.156.0/24,no-resolve
 IP-CIDR,43.163.17.229/32,no-resolve
-# IP-CIDR,43.168.0.0/16,no-resolve
-# IP-CIDR,43.174.0.0/16,no-resolve
-# IP-CIDR,49.51.0.0/16,no-resolve
 IP-CIDR,49.51.77.113/32,no-resolve
 IP-CIDR,49.51.78.0/24,no-resolve
-# IP-CIDR,49.232.0.0/14,no-resolve
 IP-CIDR,49.234.241.0/24,no-resolve
-# IP-CIDR,101.32.0.0/15,no-resolve
 IP-CIDR,101.32.198.0/24,no-resolve
-# IP-CIDR,106.52.0.0/14,no-resolve
 IP-CIDR,106.55.66.0/23,no-resolve
-# IP-CIDR,111.230.0.0/15,no-resolve
 IP-CIDR,111.230.119.0/24,no-resolve
 IP-CIDR,111.230.214.0/24,no-resolve
-# IP-CIDR,114.132.0.0/14,no-resolve
-# IP-CIDR,118.24.0.0/14,no-resolve
-# IP-CIDR,118.88.0.0/14,no-resolve
-# IP-CIDR,119.28.0.0/15,no-resolve
 IP-CIDR,119.28.37.0/24,no-resolve
 IP-CIDR,119.28.141.0/24,no-resolve
 IP-CIDR,119.28.183.0/24,no-resolve
 IP-CIDR,119.28.201.30/32,no-resolve
 IP-CIDR,119.29.48.0/23,no-resolve
-# IP-CIDR,119.91.0.0/16,no-resolve
 IP-CIDR,119.91.245.0/23,no-resolve
-# IP-CIDR,119.147.0.0/16,no-resolve
 IP-CIDR,119.147.110.0/24,no-resolve
-# IP-CIDR,121.4.0.0/15,no-resolve
 IP-CIDR,121.5.97.0/24,no-resolve
-# IP-CIDR,124.156.0.0/16,no-resolve
 IP-CIDR,124.156.124.0/24,no-resolve
 IP-CIDR,124.156.233.0/24,no-resolve
 IP-CIDR,124.156.234.0/24,no-resolve
-# IP-CIDR,129.211.0.0/16,no-resolve
-# IP-CIDR,129.226.0.0/16,no-resolve
 IP-CIDR,129.226.79.0/24,no-resolve
 IP-CIDR,129.226.111.0/24,no-resolve
 IP-CIDR,162.14.10.0/24,no-resolve
-# IP-CIDR,170.106.0.0/16,no-resolve
 IP-CIDR,170.106.48.0/23,no-resolve
 IP-CIDR,170.106.62.0/24,no-resolve
 IP-CIDR,170.106.201.0/24,no-resolve
-# IP-CIDR,175.178.0.0/16,no-resolve
 IP-CIDR,175.178.207.0/24,no-resolve
 IP-CIDR,183.60.225.0/24,no-resolve
-# IP-CIDR,193.112.0.0/16,no-resolve
 IP-CIDR,193.112.84.0/24,no-resolve
 IP-CIDR,193.112.234.0/24,no-resolve
