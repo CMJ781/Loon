@@ -26,25 +26,38 @@ DOMAIN-KEYWORD,tradeup
 # 2. 长桥证券 (Longbridge)
 # ==========================================
 # >>> 域名后缀匹配 (已剔除被主域名包含的冗余子域名)
-DOMAIN-SUFFIX,api.lbkrs.com
-DOMAIN-SUFFIX,api-gl.lbkrs.com
+DOMAIN-SUFFIX,lbkrs.com
+DOMAIN-SUFFIX,lbctrl.com
+DOMAIN-SUFFIX,wbrks.com
+DOMAIN-SUFFIX,lbkg.net
+DOMAIN-SUFFIX,lb-static.com
 DOMAIN-SUFFIX,longbridge.cloud
 DOMAIN-SUFFIX,longbridge.com
 DOMAIN-SUFFIX,longbridge.hk
 DOMAIN-SUFFIX,longbridge.sg
+DOMAIN-SUFFIX,longbridge-inc.com
 DOMAIN-SUFFIX,longbridgeapp.com
+DOMAIN-SUFFIX,longportapp.com
+DOMAIN-SUFFIX,longportapp.cn
+DOMAIN-SUFFIX,longportapp.hk
 
 # >>> 域名关键词匹配
 DOMAIN-KEYWORD,lbkrs
+
+# >>> IP地址匹配 (全部启用 no-resolve)
+IP-CIDR,47.85.0.0/16,no-resolve
+IP-CIDR,161.117.0.0/16,no-resolve
 
 
 # ==========================================
 # 3. 富途证券 / 富途牛牛 (Futu / Moomoo)
 # ==========================================
-# >>> 域名后缀匹配
+DOMAIN-SUFFIX,ftnndn.com
+DOMAIN-SUFFIX,futu.au
 DOMAIN-SUFFIX,futu.cn
 DOMAIN-SUFFIX,futu.com
 DOMAIN-SUFFIX,futu.link
+DOMAIN-SUFFIX,futu.sg
 DOMAIN-SUFFIX,futu0.com
 DOMAIN-SUFFIX,futu1.com
 DOMAIN-SUFFIX,futu2.com
@@ -58,6 +71,7 @@ DOMAIN-SUFFIX,futu9.com
 DOMAIN-SUFFIX,futuapi.com
 DOMAIN-SUFFIX,futubull.cn
 DOMAIN-SUFFIX,futuchain.com
+DOMAIN-SUFFIX,futuclean.com
 DOMAIN-SUFFIX,futuesop.com
 DOMAIN-SUFFIX,futufin.com
 DOMAIN-SUFFIX,futuhk.com
@@ -68,12 +82,21 @@ DOMAIN-SUFFIX,futuholdings.com
 DOMAIN-SUFFIX,futuhongkong.com
 DOMAIN-SUFFIX,futuin.com
 DOMAIN-SUFFIX,futuinc.com
+DOMAIN-SUFFIX,futumkt.com
 DOMAIN-SUFFIX,futuniuniu.com
+DOMAIN-SUFFIX,futunn.cn
 DOMAIN-SUFFIX,futunn.com
+DOMAIN-SUFFIX,futuone.com
+DOMAIN-SUFFIX,futusecurities.com
+DOMAIN-SUFFIX,futusg.com
+DOMAIN-SUFFIX,futusign.com
 DOMAIN-SUFFIX,futustatic.com
 DOMAIN-SUFFIX,fututrade.com
+DOMAIN-SUFFIX,futuweb.com
+DOMAIN-SUFFIX,futures.hk
 DOMAIN-SUFFIX,moomoo.com
 DOMAIN-SUFFIX,moomoo.io
+DOMAIN-SUFFIX,moomoo-us.com
 
 # >>> 富途底层依赖的第三方服务
 DOMAIN-SUFFIX,launches.appsflyersdk.com
