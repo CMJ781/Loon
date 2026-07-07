@@ -27,6 +27,8 @@ payload:
   - DOMAIN-SUFFIX,bitwarden.com
   - DOMAIN-SUFFIX,hibitsoft.ir
   - DOMAIN-SUFFIX,live.com
+  - DOMAIN-SUFFIX,goodnotes.com
+  - DOMAIN-KEYWORD,goodnotes
   - DOMAIN-KEYWORD,mp43
   - USER-AGENT,bose*
   - USER-AGENT,MKPlayer*
