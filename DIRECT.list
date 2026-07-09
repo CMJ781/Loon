@@ -1,7 +1,7 @@
 # DIRECT  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
 
 # 测速网站
-OR,((DOMAIN-SUFFIX,ipcheck.ing),(DOMAIN-SUFFIX,ip233.cn),(DOMAIN-SUFFIX,speedtest.cn))
+OR,((DOMAIN-SUFFIX,ipcheck.ing),(DOMAIN-SUFFIX,ip233.cn),(DOMAIN-SUFFIX,speedtest.cn),(DOMAIN-SUFFIX,api.ip.sb),(DOMAIN-SUFFIX,cloudflare-cn.com))
 
 # DDNS时 IP地址接口查询直连
 OR,((DOMAIN-SUFFIX,66666.host),(DOMAIN-SUFFIX,666666.host),(DOMAIN-SUFFIX,ipip.net),(DOMAIN-SUFFIX,ipw.cn),(DOMAIN-SUFFIX,ddnspod.com),(DOMAIN-KEYWORD,test-ipv6),(DOMAIN,ip.3322.net))
