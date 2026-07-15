@@ -2,7 +2,7 @@
 #!desc=修改 Apple 网络定位返回坐标 | 快捷指令(推荐): 设置地理位置 https://www.icloud.com/shortcuts/a82717d8fdad4e6280866fcf911173f7 清理恢复位置 https://www.icloud.com/shortcuts/f42632d406504f24a2cd163af4fe012f | 选点页面: https://wloc-pages.pages.dev/
 #!author=Yu9191 Rewrite
 #!homepage=https://github.com/Yu9191/wloc
-#!category=Tools
+#!category=修改定位
 #!arguments=经度:-77.089464, 纬度:38.937766, 精度:5, 日志级别:info
 #!arguments-desc=经度/纬度: 默认坐标(在线选点储存后优先)\n精度: GPS精度(米)\n日志级别: off/error/warn/info/debug/all\n\n使用方法: 打开选点页面 -> 选位置 -> 储存到设备
 
