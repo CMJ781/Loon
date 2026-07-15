@@ -1,6 +1,7 @@
-#!name=ios-location-spoofer香港大学
+#!name=Spoofer修改定位为香港大学
 #!desc=拦截 Apple 定位服务器回应的 GPS 坐标，替换成自定义位置。适用于 Surge。
-#!homepage=https://github.com/mekos2772/ios-location-spoofer，香港大学定位
+#!homepage=https://github.com/mekos2772/ios-location-spoofer
+#!category=修改定位
 #!arguments=latitude:22.282877,longitude:114.137859,altitude:90,horizontalAccuracy:5,verticalAccuracy:500,debug:false
 
 ##查目标地点海拔            https://api.open-meteo.com/v1/elevation?latitude=38.937766&longitude=-77.089464
