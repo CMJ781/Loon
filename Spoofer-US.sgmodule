@@ -6,7 +6,9 @@
 
 ##查目标地点海拔            https://api.open-meteo.com/v1/elevation?latitude=38.937766&longitude=-77.089464
 ##香港大学University of HK          #!arguments=latitude:22.282877,longitude:114.137859,altitude:90,horizontalAccuracy:5,verticalAccuracy:500,debug:false
-##澳门大学University of MACAU          #!arguments=latitude:22.128460,longitude:113.54838,altitude:0,horizontalAccuracy:5,verticalAccuracy:500,debug:false
+##澳门大学University of MACAU          #!arguments=latitude:22.163998,longitude:113.557783,altitude:57,horizontalAccuracy:5,verticalAccuracy:500,debug:false
+##国立台湾大学National Taiwan University          #!arguments=latitude:25.01962,longitude:121.53656,altitude:12,horizontalAccuracy:5,verticalAccuracy:500,debug:false
+##新加坡国立大学National University of Singapore          #!arguments=latitude:1.29628,longitude:103.77731,altitude:53,horizontalAccuracy:5,verticalAccuracy:500,debug:false
 ##北京大学PEKING University          #!arguments=latitude:39.991822,longitude:116.303947,altitude:52,horizontalAccuracy:5,verticalAccuracy:500,debug:false
 ##英国帝国理工大学Imperial College London          #!arguments=latitude:51.498959,longitude:-0.175641,altitude:20,horizontalAccuracy:5,verticalAccuracy:500,debug:false
 ##美利坚大学American University          #!arguments=latitude:38.937766,longitude:-77.089464,altitude:111,horizontalAccuracy:5,verticalAccuracy:500,debug:false
