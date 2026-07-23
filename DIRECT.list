@@ -14,11 +14,16 @@ OR,((PROCESS-NAME,BitComet),(PROCESS-NAME,DownloadService),(PROCESS-NAME,Downie*
 OR,((DOMAIN-SUFFIX,asklink.com),(DOMAIN-SUFFIX,todesk.com),(DOMAIN-SUFFIX,todesk.net),(DOMAIN-SUFFIX,todesk.cn))
 
 #Windows-ToDesk
-PROCESS-NAME,ToDesk_Setup.exe
-PROCESS-NAME,ToDesk_Session.exe
-PROCESS-NAME,ToDesk_Service.exe
-PROCESS-NAME,ToDesk.exe
+PROCESS-NAME,ToDesk_Setup
+PROCESS-NAME,ToDesk_Session
+PROCESS-NAME,ToDesk_Service
+PROCESS-NAME,ToDesk
 DOMAIN-KEYWORD,todesk
+
+# 网易UU远程
+PROCESS-NAME,UURemote
+PROCESS-NAME,UURemoteServer
+DOMAIN-KEYWORD,UURemote
 
 # 澳门电讯CTM
 DOMAIN-SUFFIX,ctm.net
@@ -33,10 +38,10 @@ DOMAIN-SUFFIX,assureid.net
 DOMAIN-SUFFIX,velo.helpshift.com
 
 #Windows-Oray
-PROCESS-NAME,devcon.exe
-PROCESS-NAME,DriverInstaller.exe
-PROCESS-NAME,CrashReport.exe
-PROCESS-NAME,SunloginClient.exe
+PROCESS-NAME,devcon
+PROCESS-NAME,DriverInstaller
+PROCESS-NAME,CrashReport
+PROCESS-NAME,SunloginClient
 DOMAIN-SUFFIX,asklink.com
 DOMAIN-SUFFIX,oray.net
 DOMAIN-SUFFIX,oray.com
