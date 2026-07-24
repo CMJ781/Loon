@@ -162,7 +162,6 @@ IP-CIDR,182.43.124.6/32,no-resolve
 IP-CIDR,101.35.177.86/32,no-resolve
 DOMAIN,96110.pages.dev
 DOMAIN-SUFFIX,gdt.qq.com
-DOMAIN-SUFFIX,ssl.qhimg.com
 DOMAIN-SUFFIX,gjfzpt.cn
 IP-CIDR,219.143.187.136/32,no-resolve
 
