@@ -41,10 +41,11 @@ payload:
   - DOMAIN-SUFFIX,event.toggle.qq.com
   - DOMAIN-SUFFIX,appsupport.qq.com
   - DOMAIN-SUFFIX,pingma.qq.com
-  - DOMAIN-SUFFIX,oth.eve.mdt.qq.com
-  - DOMAIN-SUFFIX,oth.str.mdt.qq.com
+  - DOMAIN-SUFFIX,mdt.qq.com
   - DOMAIN,msg.umeng.com
   - DOMAIN,msg.umengcloud.com
+  - DOMAIN-SUFFIX,ssl.qhimg.com
+  - DOMAIN-SUFFIX,s.360.cn
   - DOMAIN,app.zhoudamozi.com
   - DOMAIN-SUFFIX,youzibank.com
   - DOMAIN-SUFFIX,mituyuedu.com
