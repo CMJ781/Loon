@@ -1,9 +1,5 @@
 # Ad-Pass  //DOMAIN匹配与请求完全相同的地址DOMAIN-SUFFIX匹配与请求与主域名相同的地址//
 DOMAIN,tracking.miui.com
-URL-REGEX,^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/brand\/set
-URL-REGEX,^https?:\/\/www\.didapinche\.com\/app\/adstat.*&ad_type=(ride_paid|benefits)
-URL-REGEX,^https:\/\/utoken\.umeng\.com\/api\/updateZdata\/v2$
-
 DOMAIN-SUFFIX,cnzz.com
 DOMAIN-SUFFIX,hm.baidu.com
 DOMAIN-SUFFIX,rm.sina.com.cn
@@ -19,6 +15,15 @@ DOMAIN-SUFFIX,im.tieba.baidu.com
 DOMAIN-SUFFIX,cmj781.cc
 DOMAIN-SUFFIX,cmj781.vip
 DOMAIN-SUFFIX,kelee.one
+
+DOMAIN,passport.bilibili.com
+DOMAIN,mail.bilibili.com
+DOMAIN-SUFFIX,subhd.tv
+DOMAIN,dataflow.biliapi.com
+DOMAIN,ad.12306.cn
+DOMAIN,amdc.m.taobao.com
+DOMAIN,ca.iadsdk.apple.com
+
 
 # Fileball
 DOMAIN,revenuecat.com
