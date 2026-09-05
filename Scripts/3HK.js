@@ -656,6 +656,20 @@ function switchMode(mode, reason, opts = {}) {
 
 // ==================== 决策 ====================
 /** 从一批探针结果中找与 first 不同来源的成功结果（R6 复用竞速败者） */
+/** P7 自检：竞速全部结果到齐后，若两探针 loc 不一致，说明有探针未直连（policy/node 字段可能未生效） */
+function auditProbeAgreement(tag, first) {
+  if (!first || !first.all) return;
+  first.all.then(all => {
+    if (FINISHED || !Array.isArray(all)) return;
+    const oks = all.filter(r => r && r.ok);
+    if (oks.length < 2) return;
+    const locs = new Set(oks.map(r => r.loc));
+    const desc = oks.map(r => `${r.name}=${r.loc}(${r.ip || '?'})`).join(' vs ');
+    if (locs.size > 1) log('WARN', `[${tag}] 探针结论不一致 ${desc}；若 IP 明显不同，说明 PROBE_FORCE_DIRECT 未生效或有探针走了代理`);
+    else log('INFO', `[${tag}] 探针一致 ${desc}`);
+  }).catch(() => {});
+}
+
 function pickSecond(results, first) {
   return (results || []).find(r => r && r.ok && r.name !== first.name) || null;
 }
@@ -715,6 +729,7 @@ async function decideLight(tag, net) {
   if (!Token.isLatest()) return;
   const cached = Cache.get(net);
   const live = await fetchLoc(CONFIG.LIVENESS_TIMEOUT_MS, CONFIG.PROBES, { ready: net.isReady });
+  auditProbeAgreement(tag, live);
   if (!live.ok) { log('INFO', `[${tag}] 轻量复核失败(${live.reason})，保持现状`); return; }
   const target = modeForLoc(live.loc);
   if (target === 'direct' && !(cached && cached.loc === live.loc)) {
@@ -739,6 +754,7 @@ async function decideFull(tag, net) {
   const cached = Cache.get(net);
   if (cached) {
     const live = await fetchLoc(CONFIG.LIVENESS_TIMEOUT_MS, CONFIG.PROBES, ctx);
+    auditProbeAgreement(tag, live);
     if (live.ok) {
       const m = modeForLoc(live.loc);
       if (live.loc === cached.loc) {
@@ -760,6 +776,7 @@ async function decideFull(tag, net) {
   }
 
   const first = await fetchLocWithRetry(ctx);
+  auditProbeAgreement(tag, first);
   if (!Token.isLatest()) return;
   if (!first.ok) {
     if (cached && cacheUsableAsFallback(cached)) { log('WARN', `[${tag}] 探测失败(${first.reason})，沿用缓存 ${cached.mode}`); sw(cached.mode, 'fallback:cache'); return; }
