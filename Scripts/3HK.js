@@ -11,6 +11,8 @@
  *  P4  模式映射：内部 direct/rule/proxy ↔ Surge "direct"/"rule"/"global-proxy" ↔ Loon 0/1/2
  *  P5  Surge JSC 引擎无 clearTimeout，改用 safeClearTimeout；两平台 setter 返回 false 时视为失败
  *  P6  Surge iOS 蜂窝指纹优先使用 $network['cellular-data'].carrier（跨基站稳定）
+ *  P7  探针强制直连：Surge $httpClient policy=DIRECT / Loon node=DIRECT，判定回路从根上消除；
+ *      探针结果携带 ip，冲突日志打印双方 IP 便于诊断
  *
  * v2.4 变更（对照第三轮审阅 18 条）：
  *  R1  缓存命中但 liveness 显示出口变化且指向 direct → 不再直接切换/写缓存，转入完整路径交叉验证
@@ -36,20 +38,23 @@
  * ---------------------------------------------------------------
  * 部署前置条件（必读）：
  *
- * 1) 探测域名必须在 [Rule] 顶部强制 DIRECT：
+ * 1) 探针请求已由脚本强制直连（PROBE_FORCE_DIRECT：Surge policy=DIRECT / Loon node=DIRECT），
+ *    不再依赖 [Rule] 配置，也不受当前出站模式影响（含 proxy/全局模式）。
+ *    仍建议在 [Rule] 顶部保留以下规则作为双保险（例如关闭 PROBE_FORCE_DIRECT 时）：
  *      DOMAIN-SUFFIX,cloudflare-cn.com,DIRECT
  *      DOMAIN-SUFFIX,ip.sb,DIRECT
- *    说明：该规则只在 rule 模式下生效。direct 模式下探针天然直连；proxy 模式下
- *    Surge 不评估规则、探针必经代理，脚本无法得到真实出口 —— 请勿在 proxy 模式下依赖本脚本。
+ *    诊断：若日志出现「交叉冲突 A=HK(ip1) vs B=CN(ip2)」且两 IP 明显不同，说明有探针走了代理。
  *
  * 2) 脚本超时必须显式放大，并通过 argument 把同一数值告知脚本（两处相邻，改时一并修改）；
  *    脚本会据此把 DEADLINE_MS 自动收紧到 timeout−10s。未提供 argument 时按 60s 处理并输出 WARN。
  *    Surge 5.22 [Script]（建议同时挂 engine-started，解决 Surge 冷启动后首次不触发 network-changed 的问题）：
  *      smart-route = type=event,event-name=network-changed,script-path=smart-route.js,timeout=60,argument=timeout=60
  *      smart-route-boot = type=event,event-name=engine-started,script-path=smart-route.js,timeout=60,argument=timeout=60
- *    Loon 3.5.1(987) [Script]（新语法；timeout 默认 300，显式写 60 与 argument 对齐）：
+ *    Loon 3.5.1(983+) [Script]（新语法；timeout 默认 300，显式写 60 与 argument 对齐）：
  *      network-changed then script("smart-route.js", "timeout=60") with tag="智能路由", timeout=60
- *    Loon 新语法下同一事件会执行所有已启用的 network-changed 脚本（旧语法只执行第一条）。
+ *    Loon 3.5.0 / 3.5.1(≤982) [Script]（旧语法；脚本 JS 代码本身无版本要求，两种写法均可）：
+ *      network-changed script-path=smart-route.js,tag=智能路由,timeout=60,argument="timeout=60",enable=true
+ *    差异：新语法下同一事件会执行所有已启用的 network-changed 脚本，旧语法只执行第一条。
  *    Loon 的 DIRECT 规则写法：DOMAIN-SUFFIX,cloudflare-cn.com,DIRECT / DOMAIN-SUFFIX,ip.sb,DIRECT（与 Surge 相同）
  *
  * 3) 授予 Surge / Loon「精确定位」权限，否则 SSID 不可读，Wi-Fi 指纹退化（脚本会 WARN 并缩短缓存 TTL）。
@@ -96,6 +101,7 @@ const CONFIG = {
   SINGLE_SOURCE_POLICY: 'deny',
   SINGLE_SOURCE_GAP_MS: 1500,
   PROBE_MIN_BUDGET_MS: 1500,         // R2 低于此预算的探测注定超时，不发起
+  PROBE_FORCE_DIRECT: true,          // P7 探针请求强制直连（Surge policy / Loon node = DIRECT），不再依赖 [Rule]
 
   DEADLINE_MS: 40000,
   DEFAULT_SCRIPT_TIMEOUT_MS: 60000,  // 仅当 [Script] 未提供 argument=timeout=N 时使用
@@ -154,6 +160,8 @@ const Platform = (() => {
       name: 'Loon',
       /** Loon $httpClient.timeout 单位为毫秒 */
       httpTimeout: ms => Math.max(500, Math.round(ms)),
+      /** Loon 用 node 字段指定出站（内置 DIRECT） */
+      directRequestFields: () => ({ node: 'DIRECT' }),
       /** Loon 只暴露 ssid；无接口名/网关/IP */
       rawNetwork: () => {
         const c = cfg();
@@ -172,6 +180,8 @@ const Platform = (() => {
     name: isSurge ? 'Surge' : 'Unknown',
     /** Surge $httpClient.timeout 单位为秒 */
     httpTimeout: ms => Math.max(1, Math.ceil(ms / 1000)),
+    /** Surge 用 policy 字段指定出站（内置 DIRECT） */
+    directRequestFields: () => ({ policy: 'DIRECT' }),
     rawNetwork: () => {
       const n = typeof $network !== 'undefined' ? ($network || {}) : {};
       const v4 = n.v4 || {}, v6 = n.v6 || {}, wifi = n.wifi || {};
@@ -365,11 +375,15 @@ function normLoc(raw) {
 }
 const modeForLoc = loc => (CONFIG.RULE_LOCS.includes(loc) ? 'rule' : 'direct');
 
+/** 解析器返回 { loc, ip }；loc 为 null 表示解析失败。ip 仅用于诊断日志 */
 const PARSERS = {
-  trace: body => normLoc((String(body || '').match(/^loc=(\S+)\s*$/m) || [])[1]),
+  trace: body => {
+    const t = String(body || '');
+    return { loc: normLoc((t.match(/^loc=(\S+)\s*$/m) || [])[1]), ip: (t.match(/^ip=(\S+)\s*$/m) || [])[1] || '' };
+  },
   json: body => {
-    try { const j = JSON.parse(body || '{}'); return normLoc(j.country_code || j.countryCode); }
-    catch (e) { return null; }
+    try { const j = JSON.parse(body || '{}'); return { loc: normLoc(j.country_code || j.countryCode), ip: j.ip || '' }; }
+    catch (e) { return { loc: null, ip: '' }; }
   }
 };
 const bodyBrief = b => String(b || '').replace(/\s+/g, ' ').slice(0, 80) || '<empty>';
@@ -486,7 +500,7 @@ function probe(p, timeoutMs, ctx = {}) {
       out.truncated = timeoutMs < CONFIG.PROBE_TIMEOUT_MS;
       out.envReady = ctx.ready;
       if (FINISHED) return;                                          // R3 不 resolve、不落账
-      if (CONFIG.PROFILE) log('DEBUG', `[Probe] ${p.name} ${out.ok ? out.loc : out.reason} ${out.latency}ms`);
+      if (CONFIG.PROFILE) log('DEBUG', `[Probe] ${p.name} ${out.ok ? out.loc + (out.ip ? ' ' + out.ip : '') : out.reason} ${out.latency}ms`);
       resolve(out);
     };
     const timer = setTimeout(() => finish({ ok: false, reason: 'TIMEOUT' }), timeoutMs);
@@ -499,7 +513,8 @@ function probe(p, timeoutMs, ctx = {}) {
           'Cache-Control': 'no-cache',
           'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1'
         },
-        timeout: Platform.httpTimeout(timeoutMs)                    // P2 单位按平台换算
+        timeout: Platform.httpTimeout(timeoutMs),                   // P2 单位按平台换算
+        ...(CONFIG.PROBE_FORCE_DIRECT ? Platform.directRequestFields() : {})   // P7 强制直连
       }, (error, response, body) => {
         if (FINISHED) return finish({ ok: false, reason: 'ABORT' });
         if (error) return finish({ ok: false, reason: 'NET_ERR' });
@@ -508,8 +523,8 @@ function probe(p, timeoutMs, ctx = {}) {
           if (response.status === 403 || response.status === 429) log('WARN', `[Probe] ${p.name} 被拒绝 HTTP ${response.status}`);
           return finish({ ok: false, reason: `HTTP_${response.status}` });
         }
-        const loc = PARSERS[p.parser] && PARSERS[p.parser](body);
-        if (loc) return finish({ ok: true, loc });
+        const parsed = (PARSERS[p.parser] && PARSERS[p.parser](body)) || { loc: null, ip: '' };
+        if (parsed.loc) return finish({ ok: true, loc: parsed.loc, ip: parsed.ip });
         log('DEBUG', `[Probe] ${p.name} 解析失败 body="${bodyBrief(body)}"`);
         return finish({ ok: false, reason: 'PARSE_FAIL' });
       });
@@ -688,7 +703,7 @@ async function crossVerify(tag, first, ctx) {
     }
   }
   if (second.loc !== first.loc) {
-    log('WARN', `[${tag}] 交叉冲突 ${first.name}=${first.loc} vs ${second.name}=${second.loc}`);
+    log('WARN', `[${tag}] 交叉冲突 ${first.name}=${first.loc}(${first.ip || '?'}) vs ${second.name}=${second.loc}(${second.ip || '?'})；若两 IP 明显不同，说明有探针走了代理`);
     return 'conflict';
   }
   log('INFO', `[${tag}] 交叉验证通过 ${first.name}=${first.loc}, ${second.name}=${second.loc}`);
