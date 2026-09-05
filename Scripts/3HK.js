@@ -1,9 +1,9 @@
 /**
  * ================================================================
- * Surge / Loon 双平台智能出站模式切换脚本  v3.0
+ * Surge / Loon 双平台智能出站模式切换脚本  v2.75
  * 目标版本：Surge iOS 5.22.0 (Build 3831) / Loon 3.5.1 (987)
  * ================================================================
- * v3.0（在 v2.5 基础上定版；含 P1–P8）：
+ * v2.75（v2.61 基础上：彻底移除 bssid 读取与所有相关逻辑；含 P1–P10）：
  *  P1  平台抽象层 Platform：运行时识别 Surge / Loon，网络信息、模式切换、HTTP timeout 单位各走一套实现
  *  P2  Loon：$httpClient.timeout 为毫秒（Surge 为秒）；网络信息来自 $config.getConfig() 仅有 ssid，
  *      无接口名/网关/IP → kind 只能按 ssid 有无区分 wifi/cell，指纹恒为弱指纹策略（缩短 TTL、不作 direct fallback）
@@ -13,8 +13,11 @@
  *  P6  Surge iOS 蜂窝指纹优先使用 $network['cellular-data'].carrier（跨基站稳定）
  *  P7  探针强制直连：Surge $httpClient policy=DIRECT / Loon node=DIRECT，判定回路从根上消除；
  *      探针结果携带 ip，冲突日志打印双方 IP 便于诊断
- *  P8  移除 Wi-Fi 白名单：所有网络统一走探测 + 交叉验证。理由：白名单仅认 SSID（Loon 无 BSSID），
- *      同名/伪造热点即可绕过全部安全机制直接 direct；实测仅节省约 4s
+ *  P8  （v3.0 曾移除白名单，v2.6 按用户需求恢复）
+ *  P9  Wi-Fi 白名单：命中 SSID 即强制切到 WHITELIST_MODE，跳过探测。用户已确认：
+ *      NTJGJT-AC53U 即使探测为 CN 也要求 direct。风险提示：白名单仅认名字，同名热点会被同样处理。
+ *  P10 彻底移除 bssid：实测 Surge 5.22 与 Loon 3.5 均读不到 bssid。白名单仅按 SSID 判断，
+ *      Platform.rawNetwork 不再读取 bssid，指纹与弱指纹判定仅依赖 ssid / 网关 / 子网 / v6 前缀。
  *
  * v2.4 变更（对照第三轮审阅 18 条）：
  *  R1  缓存命中但 liveness 显示出口变化且指向 direct → 不再直接切换/写缓存，转入完整路径交叉验证
@@ -23,7 +26,7 @@
  *  R4  token 写盘失败 → ERROR 并降级为内存 token（单实例模式），不再静默瘫痪
  *  R5  软让步改为"先等待再写入 token"，给旧实例完成 switchMode 的窗口
  *  R6  fetchLoc 暴露 all（全部结果），交叉验证优先复用竞速败者，避免重复请求
- *  R7  SSID/BSSID 皆空的弱指纹拼入 gw+子网+v6 前缀，TTL 缩短，且不允许 fallback 到 direct 缓存
+ *  R7  SSID 为空的弱指纹拼入 gw+子网+v6 前缀，TTL 缩短，且不允许 fallback 到 direct 缓存
  *  R8  lastModeKind：bootstrap 与 fresh 跳过均按链路类型判断
  *  R9  蜂窝 v6 前缀缩至 2 段；LRU 淘汰优先同 kind；蜂窝缓存仅可作为 rule 方向依据
  *  R10 头注释修正：DIRECT 规则仅在 rule 模式生效，proxy 模式下脚本不可用
@@ -60,7 +63,7 @@
  *    Loon 的 DIRECT 规则写法：DOMAIN-SUFFIX,cloudflare-cn.com,DIRECT / DOMAIN-SUFFIX,ip.sb,DIRECT（与 Surge 相同）
  *
  * 3) 授予 Surge / Loon「精确定位」权限，否则 SSID 不可读，Wi-Fi 指纹退化（脚本会 WARN 并缩短缓存 TTL）。
- *    Loon 下即使有权限也只有 ssid（无 bssid/网关/IP），Wi-Fi 指纹为 ssid 级别。
+ *    Loon 无网关/IP 字段，Wi-Fi 指纹为 ssid 级别；Surge 下 ssid 不可读时以网关/子网兜底。
  *
  * 4) 平台 API 事实：
  *    Surge: $httpClient timeout 单位「秒」；$network.v4/v6 仅 primaryAddress/primaryInterface/primaryRouter；
@@ -82,6 +85,10 @@ const CONFIG = {
   NOTIFY_MIN_INTERVAL_MS: 60000,
 
   RULE_LOCS: ['CN'],
+
+  // —— Wi-Fi 白名单（P9/P10）：SSID 命中即强制 WHITELIST_MODE，不探测。支持字符串精确匹配或正则 ——
+  WIFI_WHITELIST_SSID: [/^NTJGJT-AC5[1-9]U$/, 'Metropark', 'HMetropark'],
+  WHITELIST_MODE: 'direct',          // direct | rule | proxy
 
   // 双探针配置。两者并发竞速，首个成功者给出判定；切向 direct 时必须由另一探针交叉验证。
   PROBES: [
@@ -163,7 +170,7 @@ const Platform = (() => {
       /** Loon 只暴露 ssid；无接口名/网关/IP */
       rawNetwork: () => {
         const c = cfg();
-        return { ssid: c.ssid || '', bssid: c.bssid || '', loonOnly: true };
+        return { ssid: c.ssid || '', loonOnly: true };
       },
       canSetMode: () => typeof $config !== 'undefined' && typeof $config.setRunningModel === 'function',
       /** P3：Loon 可读真实运行模式 */
@@ -184,7 +191,7 @@ const Platform = (() => {
       const n = typeof $network !== 'undefined' ? ($network || {}) : {};
       const v4 = n.v4 || {}, v6 = n.v6 || {}, wifi = n.wifi || {};
       return {
-        ssid: wifi.ssid || '', bssid: wifi.bssid || '',
+        ssid: wifi.ssid || '',
         iface: v4.primaryInterface || v6.primaryInterface || '',
         gw: v4.primaryRouter || v6.primaryRouter || '',
         addr4: v4.primaryAddress || '', addr6: v6.primaryAddress || '',
@@ -210,8 +217,8 @@ function parseArgument() {
 }
 
 // ==================== 运行期上下文 ====================
-const KEY_TOKEN = 'smart_route_token_v30';
-const KEY_STATE = 'smart_route_state_v30';
+const KEY_TOKEN = 'smart_route_token_v275';
+const KEY_STATE = 'smart_route_state_v275';
 const TOKEN = `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
 const T0 = Date.now();
 let FINISHED = false;
@@ -318,7 +325,6 @@ const Token = {
 function getNetworkInfo() {
   const raw = Platform.rawNetwork();
   const ssid = raw.ssid || '';
-  const bssid = (raw.bssid || '').toLowerCase();
 
   if (raw.loonOnly) {
     // P2：Loon 无接口名/网关/IP。有 ssid → wifi；无 ssid → 无法区分蜂窝与无权限 Wi-Fi，按 cell 处理（更保守：
@@ -326,11 +332,11 @@ function getNetworkInfo() {
     const isWifi = !!ssid;
     const kind = isWifi ? 'wifi' : 'cell';
     return {
-      iface: 'n/a', ssid, bssid, gw: '', kind, isWifi, isCellular: !isWifi, isWired: false,
+      iface: 'n/a', ssid, gw: '', kind, isWifi, isCellular: !isWifi, isWired: false,
       isReady: true,                                                 // Loon 无 IP 字段，视为就绪
       weak: !isWifi,
       loonAmbiguous: !isWifi,                                        // 标记"可能是无权限 Wi-Fi"
-      fingerprint: isWifi ? `wifi|${ssid}|${bssid || 'loon'}` : 'cell|loon|unknown'
+      fingerprint: isWifi ? `wifi|${ssid}|loon` : 'cell|loon|unknown'
     };
   }
 
@@ -347,15 +353,21 @@ function getNetworkInfo() {
   const isWired = !isCellular && !isWifi && iface !== 'none';
   const kind = isCellular ? 'cell' : isWifi ? 'wifi' : isWired ? 'wired' : 'none';
   const isReady = !!(addr4 || addr6);
-  const weak = !isCellular && !ssid && !bssid;                       // R7 弱指纹
+  const weak = !isCellular && !ssid;                                 // R7 弱指纹
 
   const fingerprint = isCellular
     ? `cell|${raw.carrier || iface}|${v6Carrier || 'nov6'}`                    // 运营商名优先，跨基站稳定
     : weak
       ? `${kind}|?|${gw || '-'}/${subnet4 || '-'}/${v6Prefix || 'nov6'}`
-      : `${kind}|${ssid || '?'}|${bssid || gw || subnet4 || iface}`;
+      : `${kind}|${ssid}|${gw || subnet4 || iface}`;
 
-  return { iface, ssid, bssid, gw, kind, isWifi, isCellular, isWired, isReady, weak, loonAmbiguous: false, fingerprint, carrier: raw.carrier || '', radio: raw.radio || '' };
+  return { iface, ssid, gw, kind, isWifi, isCellular, isWired, isReady, weak, loonAmbiguous: false, fingerprint, carrier: raw.carrier || '', radio: raw.radio || '' };
+}
+
+function inWhitelist(net) {
+  if (!net.isWifi) return false;
+  const s = net.ssid;
+  return !!s && CONFIG.WIFI_WHITELIST_SSID.some(r => (r && typeof r.test === 'function' ? r.test(s) : r === s));
 }
 
 // ==================== 地区码 ====================
@@ -408,6 +420,8 @@ function validateConfig() {
   else if (CONFIG.PROBES.length < 2) log('WARN', '有效探针少于 2 个，切向 direct 的交叉验证无法进行（脚本会拒绝切 direct）');
   if (!['deny', 'confirm'].includes(CONFIG.SINGLE_SOURCE_POLICY)) { log('WARN', `SINGLE_SOURCE_POLICY="${CONFIG.SINGLE_SOURCE_POLICY}" 非法，回落 deny`); CONFIG.SINGLE_SOURCE_POLICY = 'deny'; }
   if (CONFIG.SINGLE_SOURCE_POLICY === 'confirm') log('WARN', 'SINGLE_SOURCE_POLICY=confirm：第二探针不可用时将以同源二次确认放行 direct，安全性低于双源验证');
+  if (!['direct', 'rule', 'proxy'].includes(CONFIG.WHITELIST_MODE)) { log('WARN', `WHITELIST_MODE="${CONFIG.WHITELIST_MODE}" 非法，回落 rule`); CONFIG.WHITELIST_MODE = 'rule'; }
+  CONFIG.WIFI_WHITELIST_SSID = Array.isArray(CONFIG.WIFI_WHITELIST_SSID) ? CONFIG.WIFI_WHITELIST_SSID : [];
   CONFIG.RULE_LOCS = (CONFIG.RULE_LOCS || []).map(s => String(s).toUpperCase()).filter(s => /^[A-Z]{2}$/.test(s));
   if (!CONFIG.RULE_LOCS.length) { log('WARN', 'RULE_LOCS 为空或非法，回落 ["CN"]'); CONFIG.RULE_LOCS = ['CN']; }
 
@@ -416,7 +430,7 @@ function validateConfig() {
   if (CONFIG.DEADLINE_MS < minNeeded) log('WARN', `DEADLINE_MS=${CONFIG.DEADLINE_MS} 不足以完成一次决策（至少需 ${minNeeded}ms）`);
 
   const down = CONFIG.PROBES.filter(p => !ProbeStats.isHealthy(p.name)).map(p => p.name);
-  log('INFO', `平台=${Platform.name} 配置: probes=${CONFIG.PROBES.map(p => p.name).join('/')}${down.length ? `(${down.join(',')} 持续失败中)` : ''} policy=${CONFIG.SINGLE_SOURCE_POLICY} ruleLocs=${CONFIG.RULE_LOCS.join(',')} deadline=${CONFIG.DEADLINE_MS}ms timeout=${CONFIG.SCRIPT_TIMEOUT_MS / 1000}s`);
+  log('INFO', `平台=${Platform.name} 配置: probes=${CONFIG.PROBES.map(p => p.name).join('/')}${down.length ? `(${down.join(',')} 持续失败中)` : ''} policy=${CONFIG.SINGLE_SOURCE_POLICY} ruleLocs=${CONFIG.RULE_LOCS.join(',')} whitelist=${CONFIG.WIFI_WHITELIST_SSID.length}ssid→${CONFIG.WHITELIST_MODE} deadline=${CONFIG.DEADLINE_MS}ms timeout=${CONFIG.SCRIPT_TIMEOUT_MS / 1000}s`);
 }
 
 // ==================== 探针统计（R2 仅真实失败记账；R16 EWMA 成功率 + 清理）====================
@@ -732,7 +746,7 @@ async function decideFull(tag, net) {
   if (!Token.isLatest()) { log('DEBUG', `[${tag}] token 已失效，退出`); return; }
   if (!net.isReady) log('WARN', `[${tag}] 尚无 IP，仍尝试探测`);
   if (net.loonAmbiguous) log('WARN', `[${tag}] Loon 未读到 SSID：可能是蜂窝，也可能是未授予精确定位的 Wi-Fi，按蜂窝保守处理`);
-  else if (net.weak) log('WARN', `[${tag}] SSID/BSSID 不可读（请授予 ${Platform.name} 精确定位），使用弱指纹并缩短缓存 TTL`);
+  else if (net.weak) log('WARN', `[${tag}] SSID 不可读（请授予 ${Platform.name} 精确定位），使用弱指纹并缩短缓存 TTL`);
   const ctx = { ready: net.isReady };
   const sw = (mode, reason) => switchMode(mode, reason, { kind: net.kind });
 
@@ -794,6 +808,12 @@ async function main() {
 
     let net = getNetworkInfo();
     log('INFO', `链路: ${net.kind}/${net.iface}${net.carrier ? '/' + net.carrier + (net.radio ? '(' + net.radio + ')' : '') : ''} | SSID=${net.ssid || '-'} | ready=${net.isReady} | fp=${net.fingerprint}`);
+
+    // P9：白名单短路（force：无视 lastMode/实测模式，必定重申）
+    if (inWhitelist(net)) {
+      switchMode(CONFIG.WHITELIST_MODE, `whitelist:${net.ssid}`, { force: true, kind: net.kind });
+      return;
+    }
 
     // R8：bootstrap 的"新鲜决策"仅认同链路类型
     if (net.isCellular) {
