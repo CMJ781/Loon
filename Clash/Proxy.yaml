@@ -1,6 +1,7 @@
 payload:
   - DOMAIN,api-h2.tiktokv.com
   - DOMAIN,api2-16-h2.musical.ly
+  - DOMAIN-SUFFIX,iqsjp.com
   - DOMAIN-SUFFIX,accuweather.com
   - DOMAIN-SUFFIX,e.t9k.space
   - DOMAIN-SUFFIX,ecs.console.aliyun.com
